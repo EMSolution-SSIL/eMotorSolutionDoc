@@ -19,7 +19,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
+            to="/">
             Start with an interior permanent magnet machine - 5min ⏱️
           </Link>
         </div>

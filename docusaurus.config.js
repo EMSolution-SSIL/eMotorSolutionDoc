@@ -112,15 +112,6 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorials',
-                to: '/docs/tutorial-intro',
-              },
-            ],
-          },
-          {
             title: 'Community',
             items: [
               {
