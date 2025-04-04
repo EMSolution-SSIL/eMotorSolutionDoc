@@ -74,24 +74,36 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/eMotorSolution_icon.svg',
       navbar: {
-        title: 'My Site',
+        title: 'eMotorSolution',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'eMotorSolution Logo',
+          src: 'img/eMotorSolution_icon.svg',
         },
         items: [
           {
             type: 'docSidebar',
+            sidebarId: 'docsSidebar',
+            position: 'left',
+            label: 'Docs',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Tutorials',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'showcasesSidebar',
+            position: 'left',
+            label: 'Showcases',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://www.ssil.co.jp/',
+            label: 'SSIL',
             position: 'right',
           },
         ],
@@ -103,8 +115,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Tutorials',
+                to: '/docs/tutorial-intro',
               },
             ],
           },
@@ -139,7 +151,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Since Solutions International Laboratory, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

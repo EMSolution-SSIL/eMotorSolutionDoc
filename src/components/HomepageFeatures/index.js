@@ -4,38 +4,43 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
+    title: 'Everything in Python',
+    Svg: require('@site/static/img/Python.svg').default,
+    description: (
+      <>
+        eMotorSolution is built on top of Python, a powerful and flexible programming language that is widely used in the engineering community.
+        This allows users to easily integrate eMotorSolution into their existing workflows and use it in conjunction with other Python libraries and tools.
+        The software provides a wide range of features and tools that allow users to quickly and easily design and optimize electric machines.
+        The Python interface is intuitive and easy to use, making it accessible to users of all skill levels.
+      </>
+    ),
+  },
+  {
     title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/slice-of-cake.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        eMotorSolution is designed to be user-friendly and easy to use, with a focus on providing a seamless user experience.
+        You can start using it right away without any prior knowledge of electric machines.
+        The user interface is intuitive and easy to navigate, making it accessible to users of all skill levels.
+        The software provides a wide range of features and tools that allow users to quickly and easily design and optimize electric machines.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Powered by EMSolution',
+    Svg: require('@site/static/img/EMSolution_icon.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Simulation and optimization of electric machines is requires complex and efficient computations.
+        eMotorSolution is powered by EMSolution, a powerful and efficient simulation engine that can handle computational electromagnetics efficiently, accurately, and quickly.
+        EMSolution is a powerful simulation engine that can handle complex simulations with ease.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
