@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunke_motor_solution_doc=self.webpackChunke_motor_solution_doc||[]).push([[6772],{9347:o=>{o.exports=JSON.parse('{"metadata":{"permalink":"/eMotorSolutionDoc/en/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
