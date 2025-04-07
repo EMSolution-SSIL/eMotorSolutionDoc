@@ -7,6 +7,8 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
+import Translate, { translate } from '@docusaurus/Translate';
+
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -15,12 +17,20 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">
+          <Translate
+            id="homepage.eMotorSolution.description">
+            電動機設計およびシミュレーションツール
+          </Translate>
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/">
-            Start with an interior permanent magnet machine - 5min ⏱️
+            <Translate
+              id="homepage.eMotorSolution.start">
+              永久磁石を使用したマシンでスタート - 5分
+            </Translate>
           </Link>
         </div>
       </div>
