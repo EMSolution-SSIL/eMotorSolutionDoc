@@ -11,7 +11,7 @@ sidebar_position: 2
 
 メインウィンドウには、共通機能へのクイックアクセスのためのメニューバーとツールバーも含まれています。
 
-![main window](main_window_001.png)
+![main window](./img/main_window_001.png)
 
 ## プロジェクトパネル
 
@@ -31,14 +31,14 @@ sidebar_position: 2
 
 | 状態     | アイコン | 説明                                       |
 |----------|----------|--------------------------------------------|
-| 初期     | ![initial](initial.png) | マイルストーンはまだ検証されていない             |
-| 有効     | ![valid](valid.png)     | パラメータが妥当で、マイルストーンが検証済み     |
-| 警告     | ![warning](warning.png) | サブチェックポイントの一部パラメータが不適切     |
-| 無効     | ![invalid](invalid.png) | パラメータにエラーがある                         |
+| 初期     | ![initial](./img/initial.png) | マイルストーンはまだ検証されていない             |
+| 有効     | ![valid](./img/valid.png)     | パラメータが妥当で、マイルストーンが検証済み     |
+| 警告     | ![warning](./img/warning.png) | サブチェックポイントの一部パラメータが不適切     |
+| 無効     | ![invalid](./img/invalid.png) | パラメータにエラーがある                         |
 
 チェックポイントはユーザーが変更を行うたびに自動的に検証されますが、右クリックして「`Validate`（検証）」を選択することで手動検証も可能です。検証に失敗した場合は、`ログ`パネルにメッセージが表示されます。
 
-<p align="center">![validationg](main_window_002.png)</p>
+<p align="center">![validationg](./img/main_window_002.png)</p>
 
 ## プロパティパネル
 
@@ -57,7 +57,7 @@ sidebar_position: 2
 
 追加情報は*注記*列に表示されます。無効な式がある場合、その行は赤くハイライトされ、エラーメッセージが*ログ*パネルと*注記*に表示されます。
 
-<p align="center">![validationg](main_window_003.png)</p>
+<p align="center">![validationg](./img/main_window_003.png)</p>
 
 ## ログパネル
 

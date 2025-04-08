@@ -1,41 +1,45 @@
-# Website
+# For Users
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+The website as accessible through [https://eskandarih.github.io/eMotorSolutionDoc/](https://eskandarih.github.io/eMotorSolutionDoc/) 
 
-### Installation
+# For Developers
 
+## 1. Initial Setup
+1. Install [Node.js](https://nodejs.org/en/download/) (LTS version recommended).
+    ```bash
+    node -v
+    ```
+2. Clone the repository to your local machine.
+    ```bash   
+    git clone https://github.com/eskandarih/eMotorSolutionDoc.git
+    ```
+3. Navigate to the cloned directory in your terminal.
+    ```bash
+    cd eMotorSolutionDoc
+    ```
+4. Install the dependencies 
+    ```bash
+    npm install
+    ```
+
+## 2. Running the Development Server
+For Japanese version:
+```bash
+npm run start
 ```
-$ yarn
+For English version:
+```bash
+npm run start -- --locale en
 ```
+In developer mode it is not possible to switch between languages. You need to restart the server with the desired language.
 
-### Local Development
-
+## 3. Deploying the Documentation
+```bash
+$env:GIT_USER="<Your GitHub username>"
+npm run deploy
 ```
-$ yarn start
-```
+This will build the documentation and deploy it to the `gh-pages` branch of your repository. It might take a few minutes for the changes to be reflected on the live site.
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+# Additional Information
+For more information on how to use the documentation, please refer to the [Docusaurus documentation](https://docusaurus.io/docs).

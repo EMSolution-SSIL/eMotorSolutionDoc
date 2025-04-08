@@ -20,16 +20,15 @@ function HomepageHeader() {
         <p className="hero__subtitle">
           <Translate
             id="homepage.eMotorSolution.description">
-            電動機設計およびシミュレーションツール
+
           </Translate>
         </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/">
+            to="/docs/tutorials/IPMSM/ModelI">
             <Translate
               id="homepage.eMotorSolution.start">
-              永久磁石を使用したマシンでスタート - 5分
             </Translate>
           </Link>
         </div>
