@@ -28,10 +28,10 @@ The project tree is organized in a way that reflects the different stages of the
 Each milestone or checkpoint is associated with a state given by an icon on the left side. The state can be:
 | State   | Icon | Description                                            |
 |---------|------|--------------------------------------------------|
-| Initial | ![main window](./img/initial.png)  |The milestone is not yet verified                      |
-| Valid   | ![main window](./img/valid.png)  |The milestone is verified and all parameters are feasible |
-| Warning | ![main window](./img/warning.png)  |Some parameters in the sub-checkpoint are not feasible |
-| Invalid | ![main window](./img/invalid.png)  |There is an error in the associated parameters         |
+| Initial | ![main window](./img/61799.png)  |The milestone is not yet verified                      |
+| Valid   | ![main window](./img/60513.png)  |The milestone is verified and all parameters are feasible |
+| Warning | ![main window](./img/59412.png)  |Some parameters in the sub-checkpoint are not feasible |
+| Invalid | ![main window](./img/60304.png)  |There is an error in the associated parameters         |
 
 Each checkpoint is automatically verified when the user makes any changes. However, the user can also manually verify the checkpoint by right-clicking on it and selecting `Validate` from the context menu. The verification process will check all parameters and sub-checkpoints and update the state of the milestone accordingly. If there is an error in the parameters, a message will be displayed in the `Log` panel.
 <p align="center">![validationg](./img/main_window_002.png)</p>
@@ -39,7 +39,9 @@ Each checkpoint is automatically verified when the user makes any changes. Howev
 ## Properties Panel
 The properties panel displays the properties of the selected item in the project tree. The properties are displayed in a tabular format with 5 columns: *Property*, *Expression*, *Unit*, *Evaluation* and *Notes*.
 
+:::tip
 The user can edit the properties by clicking on the cell in the *Expression* column. Since the cells may have small space, user can click on the button on the right side of the cell to open a pop-up window with a larger text area. 
+:::
 
 The expression is a pythonic mathematical expression that can be evaluated using the python interpreter. User can use `numpy` expressions as `np`. Here are some examples of expressions:
 * `2 * 3 + 4` : evaluates to `10`
@@ -47,6 +49,10 @@ The expression is a pythonic mathematical expression that can be evaluated using
 * `np.sqrt(4)` : evaluates to `2.0`
 * `np.sin(np.pi/2)` : evaluates to `1.0`
 * `parameter1 + parameter2` : evaluates to the sum of the two parameters defined in `Script` checkpoint.
+
+:::info
+To learn more about `numpy` expressions, please refer to the [numpy documentation](https://numpy.org/doc/stable/user/absolute_beginners.html).
+:::
 
 Some properties may have a unit associated with them. The unit is displayed in the *Unit* column. The final evaluation of the expression in SI units is displayed in the *Evaluation* column. 
 
