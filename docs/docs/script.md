@@ -19,8 +19,6 @@ Python スクリプトは `project_dir/scripts/` ディレクトリに保存さ�
 ## `ems` モジュール
 スクリプト環境では `ems` モジュールが自動的にインポートされます。このモジュールは、プロジェクト環境とのやりとり、パラメータ管理、さまざまな操作を行うための関数やクラスを提供します。
 
-### 関数一覧
-
 - `ems.get_cwd() -> str`: 現在の作業ディレクトリを返します  
 - `ems.get_parameters() -> dict`: プロジェクト内で定義されたすべてのパラメータの辞書を返します  
 - `ems.update_parameters(params: dict)`: 指定した辞書でパラメータを更新します（新規追加や変更が可能）  
@@ -34,7 +32,7 @@ Python スクリプトは `project_dir/scripts/` ディレクトリに保存さ�
 - `ems.stop()`: 現在の計算を停止します  
 - `ems.stop_requested() -> bool`: 停止リクエストがあるかを確認し、あれば `True` を返します  
 
-### 新しいパラメータの追加方法
+## 新しいパラメータの追加方法
 
 1. **スクリプトタブを使う方法**  
 以下のようにスクリプト内で直接追加：
@@ -47,7 +45,7 @@ ems.update_parameters({"par": par})
 2. **プロパティエディタパネルを使う方法**  
 プロパティエディタパネル内の <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xF8AA;</span> ボタンをクリックしてパラメータを追加。名前と値を入力するポップアップが表示され、対応するコードスニペットもスクリプトタブに自動生成されます。
 
-### パラメータの削除
+## パラメータの削除
 
 以下のいずれかで削除可能：
 
@@ -57,7 +55,7 @@ ems.update_parameters({"par": par})
 ems.pop_parameter("par")
 ```
 
-### Print と Pretty Print
+## Print と Pretty Print
 
 ログパネルにメッセージを表示するには `print` を使用：
 ```python
@@ -69,7 +67,7 @@ print("Hello World")
 pprint({"key": "value"})
 ```
 
-### 重い計算の停止方法
+## 重い計算の停止方法
 
 `ems.stop()` と `ems.stop_requested()` を使って長時間の計算を中断できます。以下はその一例：
 ```python

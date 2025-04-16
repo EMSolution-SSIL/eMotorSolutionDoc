@@ -18,7 +18,6 @@ Python scripts are located in the `project_dir/scripts/` directory. To choose wh
 ## `ems` module
 The `ems` module is automatically imported in the script environment. This module provides a set of functions and classes that allow you to interact with the project environment, manage parameters, and perform various operations.
 
-### Functions
 - `ems.get_cwd() -> str`: Returns the current working directory of the project.
 - `ems.get_parameters() -> dict`: Returns a dictionary of all parameters defined in the project environment.
 - `ems.update_parameters(params: dict)`: Updates the project parameters with the provided dictionary. This function allows you to add or modify parameters dynamically.
@@ -32,7 +31,7 @@ The `ems` module is automatically imported in the script environment. This modul
 - `ems.stop()`: Stops the current calculation. This function is useful for interrupting long-running calculations or processes.
 - `ems.stop_requested() -> bool`: Checks if a stop request has been made. This function returns `True` if a stop request is pending, allowing you to implement mechanisms for gracefully stopping calculations.
 
-### Adding a new parameter
+## Adding a new parameter
 There are two ways to add a new parameter to the project environment:
 
 1. **Using the Script Tab**:  
@@ -47,13 +46,13 @@ There are two ways to add a new parameter to the project environment:
 1. **Using the Property Editor Panel**:  
     Click on the <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xF8AA;</span> button inside the Property Editor panel to add a new parameter interactively. This will open a pop-up window where you can enter the parameter name and value. The corresponding code snippet will be automatically generated in the script tab. 
 
-### Removing a parameter
+## Removing a parameter
 To remove a parameter, you can either delete it from the Property Editor panel by clicking on the <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE74D;</span> button and choosing the parameter you want to remove, or you can use the following code snippet in the script tab:
 ```python
 ems.pop_parameter("par")
 ```
 
-### Print and Pretty Print
+## Print and Pretty Print
 To print a message in the log panel, you can use the `print` function. For example:
 ```python
 print("Hello World")
@@ -66,7 +65,7 @@ pprint({"key": "value"})
 ```
 This will format the dictionary in a more readable way, making it easier to understand the structure and contents of the data.
 
-### Stopping heavy calculations
+## Stopping heavy calculations
 To stop heavy calculations, you can use the `ems.stop()` and `ems.stop_requested()` functions. The `ems.stop()` function will stop the current calculation, while the `ems.stop_requested()` function can be used to check if a stop request has been made. You can use these functions to implement a mechanism for stopping long-running calculations gracefully.
 ```python
 import ems
