@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: スクリプト(Script)
+title: Script
 ---
 
 # スクリプトチェックポイント

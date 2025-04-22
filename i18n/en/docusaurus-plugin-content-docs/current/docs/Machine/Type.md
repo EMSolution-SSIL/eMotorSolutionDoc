@@ -3,6 +3,7 @@ sidebar_position: 1
 title: Type
 ---
 # Type Checkpoint
+<p>![type](./img/type.png)</p>
 
 ## Machine Type
 Currently, the software supports three types of machines: 

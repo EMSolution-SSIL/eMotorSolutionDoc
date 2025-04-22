@@ -1,23 +1,14 @@
 ---
-sidebar_position: 1
-title: Type
+sidebar_position: 2
+title: Magnet
 ---
-# Type Checkpoint
+# Magnet
+Magnets are characterized by their magnetization direction and strength. The magnetization direction is the direction of the magnetic field lines, while the strength is the magnitude of the magnetic field. The strength of a magnet can be measured in Tesla (T) or Gauss (G), with 1 T = 10,000 G. The relative permeability of a magnet is a measure of how easily it can be magnetized in the presence of an external magnetic field. The relative permeability is defined as the ratio of the magnetic field strength inside the material to the magnetic field strength outside the material. It is possible to take the conductivty of the magnet into account to calculate the ohmic losses in the magnet. 
 
-## Machine Type
-Currently, the software supports three types of machines: 
-* **IPMSM**: Interior Permanent Magnet Synchronous Motor
-* **SPMSM**: Surface Permanent Magnet Synchronous Motor
-* **SynRM**: Synchronous Reluctance Motor
+The following properties are defined for the magnet:
+- **Radial Magnetization**: Specifies the magnetization strength in the radial direction for cylindrical magnets and normal direction for rectangular magnets. It is measured in Tesla (T) or Gauss (G).
+- **Tangential Magnetization**: Specifies the magnetization strength in the tangential direction. It is measured in Tesla (T) or Gauss (G).
+- **Relative Permeability**: Specifies the relative permeability of the magnet material. It is a dimensionless quantity.
+- **Conductivity**: Specifies the conductivity of the magnet material. It is measured in Siemens per meter (S/m). Default is 0 S/m.
 
-## Pole Number
-The pole number is the number of magnetic poles in the machine. 
-:::info
-Pole number should be a positive even number.
-:::
-
-## Topology
-The topology of the machine can be either **Internal Rotor** or **External Rotor**.
-
-## Machine Name
-The machine name is a user-defined string that identifies the machine. It can be any alphanumeric string, including spaces and special characters. The name is used to label the machine in the project tree and in the output files.
+![validationg](./img/magnet_props.png)

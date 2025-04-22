@@ -2,22 +2,13 @@
 sidebar_position: 2
 title: Magnet
 ---
-# Type Checkpoint
+# 磁石 (Magnet)
+磁石は磁化方向と磁化強度によって特徴付けられます。磁化方向は磁力線の向きを示し、磁化強度は磁場の大きさを表します。磁化強度はテスラ（T）またはガウス（G）で測定され、1 T = 10,000 G に相当します。磁石の相対透磁率は、外部磁場下でどれだけ磁化されやすいかを示す指標で、材質内部の磁場強度と外部の磁場強度の比として定義されます。磁石の導電率を考慮してオーミック損失を計算することも可能です。
 
-## Machine Type
-Currently, the software supports three types of machines: 
-* **IPMSM**: Interior Permanent Magnet Synchronous Motor
-* **SPMSM**: Surface Permanent Magnet Synchronous Motor
-* **SynRM**: Synchronous Reluctance Motor
+以下のプロパティが磁石に対して定義されています：
+- **ラジアル磁化(Radial Magnetization)**：円筒形磁石では放射方向、矩形磁石では法線方向の磁化強度を指定します。テスラ（T）またはガウス（G）で測定します。  
+- **接線方向磁化(Tangential Magnetization)**：接線方向の磁化強度を指定します。テスラ（T）またはガウス（G）で測定します。  
+- **相対透磁率(Relative Permeability)**：磁石材料の相対透磁率を指定します。無次元量です。  
+- **導電率(Conductivity)**：磁石材料の導電率を指定します。シーメンス毎メートル（S/m）で測定し、デフォルトは 0 S/m です。
 
-## Pole Number
-The pole number is the number of magnetic poles in the machine. 
-:::info
-Pole number should be a positive even number.
-:::
-
-## Topology
-The topology of the machine can be either **Internal Rotor** or **External Rotor**.
-
-## Machine Name
-The machine name is a user-defined string that identifies the machine. It can be any alphanumeric string, including spaces and special characters. The name is used to label the machine in the project tree and in the output files.
+<p class="ems">![magnet properties](./img/magnet_props.png)</p>

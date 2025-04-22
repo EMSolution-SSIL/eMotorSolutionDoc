@@ -2,6 +2,7 @@
 sidebar_position: 2
 ---
 # 寸法(Dimension)
+<p>![寸法](./img/dimension.png)</p>
 
 ステータおよびロータコアの寸法はここで定義されます。
 * ステータ外径(Stator Outer Radius)
