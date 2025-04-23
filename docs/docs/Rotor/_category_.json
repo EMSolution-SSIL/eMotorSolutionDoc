@@ -1,0 +1,8 @@
+{
+  "label": "Rotor",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Rotor milestone has a Laminations checkpoint and another checkpoint that specifies the rotor's shape depending on the type of machine."
+  }
+}
