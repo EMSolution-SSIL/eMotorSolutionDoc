@@ -3,6 +3,6 @@
   "position": 7,
   "link": {
     "type": "generated-index",
-    "description": "Rotor milestone has a Laminations checkpoint and another checkpoint that specifies the rotor's shape depending on the type of machine."
+    "description": "ローターマイルストーンには、「積層板」のチェックポイントと、機械の種類に応じてローター形状を規定する別のチェックポイントが含まれます。"
   }
 }

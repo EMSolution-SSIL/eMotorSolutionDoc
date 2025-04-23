@@ -2,15 +2,20 @@
 sidebar_position: 2
 title: IPMSM Hole-Magnet
 ---
-# Hole-Magnet Checkpoint
-This type of checkpoint appears in the rotor milestone if the machine type is **IPMSM**. This type of machine may have multiple set of magnet-hole pairs. And each set of magnet-hole pairs has its own independent geometrical and material properties. 
+# 穴あき磁石チェックポイント
 
-To add a new set of magnet-hole pairs, click on the **Add Hole-Magnet** button in the property editor panel or right-click on the **Hole-Magnet** checkpoint in the project tree and select **Add Hole-Magnet** from the context menu.
+このタイプのチェックポイントは、機械の種類が **IPMSM（埋込磁石型同期モーター）** の場合にローターマイルストーンに表示されます。このタイプのモーターでは、複数の磁石-穴ペアを持つことが可能です。それぞれの磁石-穴ペアセットは、独自の幾何学的および材料特性を有しています。
 
-<p>![Add new Hole-Magnet](./img/hole_magnet_add.png)</p>
+新しい磁石-穴ペアセットを追加するには、プロパティエディターパネル内の **「穴あき磁石を追加」** ボタンをクリックするか、プロジェクトツリー内の **「Hole-Magnet」** チェックポイントを右クリックして、コンテキストメニューから **「穴あき磁石を追加」** を選択します。
 
-The software provides a set of commonly used hole-magnet pairs. Although the user can create a custom hole-magnet pair as well. The following figure shows the list of available hole-magnet pairs.
+<p>![新しい穴あき磁石を追加](./img/hole_magnet_add.png)</p>
 
-<p>![Hole-Magnet pairs](./img/hole_magnet_selector.png)</p>
+ソフトウェアには、一般的に使用される磁石-穴ペアがあらかじめ用意されています。ユーザーは独自のカスタム磁石-穴ペアを作成することも可能です。以下の図は、使用可能な磁石-穴ペアの一覧を示しています。
 
-The geometrical and material properties of each hole-magnet pair are given in their respective section in the property editor panel. Each section contains <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE9CE;</span> button to preview the hole-magnet pair shape, and <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xEC5B;</span> button to print the hint values in the log panel and <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE74D;</span> button to delete that hole-magnet pair.
+<p>![磁石-穴ペア一覧](./img/hole_magnet_selector.png)</p>
+
+各磁石-穴ペアの幾何学的および材料特性は、プロパティエディターパネル内の各セクションで定義されます。各セクションには以下のボタンが含まれています：
+
+- <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE9CE;</span> 形状のプレビューを表示するボタン
+- <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xEC5B;</span> ヒント値をログパネルに出力するボタン
+- <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE74D;</span> 該当する磁石-穴ペアを削除するボタン

@@ -1,7 +1,8 @@
 ---
 sidebar_position: 2
+title: Dimension
 ---
-# 寸法(Dimension)
+# 寸法チェックポイント
 <p>![寸法](./img/dimension.png)</p>
 
 ステータおよびロータコアの寸法はここで定義されます。
