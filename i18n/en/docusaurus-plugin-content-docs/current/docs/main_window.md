@@ -10,7 +10,8 @@ The main window of the software is divided into three main panels:
 * **Properties panel** : displaying the properties of the selected item in the project tree in a tabular format
 * **Log panel** : displaying the log messages and errors
 The main window also contains a menu bar and a toolbar for quick access to common functions.
-<p class="ems">![main window](./img/main_window_001.png)</p>
+
+![main window](./img/main_window_001.png)
 
 ## Projects Panel
 The project tree is a hierarchical representation of the project roadmap. It allows the user to navigate through the different milestones and checkpoints of the project. The project tree is divided into several sections, each representing a different part of the project. The user can expand or collapse each section to view or hide its contents.
