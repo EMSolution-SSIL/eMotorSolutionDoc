@@ -93,12 +93,6 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorials',
-          },
-          {
-            type: 'docSidebar',
             sidebarId: 'showcasesSidebar',
             position: 'left',
             label: 'Showcases',
