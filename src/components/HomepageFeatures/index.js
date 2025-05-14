@@ -11,7 +11,7 @@ const FeatureList = [
   },
   {
     title: translate({ id: 'feature.easy-to-use.title' }),
-    Svg: require('@site/static/img/slice-of-cake.svg').default,
+    Svg: require('@site/static/img/easy.png').default,
     description: (
       translate({ id: 'feature.easy-to-use.description' })
     ),
@@ -29,7 +29,11 @@ function Feature({ Svg, title, description }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        {typeof Svg === 'string' ? (
+          <img src={Svg} alt={title} className={styles.featureSvg} />
+        ) : (
+          <Svg className={styles.featureSvg} role="img" />
+        )}
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
