@@ -320,7 +320,7 @@
     "message": "Everything in Python"
   },
   "feature.python.description": {
-    "message": "eMotorSolution is built on top of Python, a powerful and flexible programming language that is widely used in the engineering community. This allows users to easily integrate eMotorSolution into their existing workflows and use it in conjunction with other Python libraries and tools. The software provides a wide range of features and tools that allow users to quickly and easily design and optimize electric machines. The Python interface is intuitive and easy to use, making it accessible to users of all skill levels."
+    "message": "eMotorSolution is built on top of Python, a powerful and flexible programming language that is widely used in the engineering community. This allows users to easily integrate eMotorSolution into their existing workflows and use it in conjunction with other Python libraries and tools. The software provides a wide range of features and tools that allow users to quickly and easily design and optimize electric machines."
   },
   "feature.easy-to-use.title": {
     "message": "Easy to Use"
@@ -332,6 +332,6 @@
     "message": "Powered by EMSolution"
   },
   "feature.emsolution.description": {
-    "message": "Simulation and optimization of electric machines requires complex and efficient computations. eMotorSolution is powered by EMSolution, a powerful and efficient simulation engine that can handle computational electromagnetics efficiently, accurately, and quickly. EMSolution is a powerful simulation engine that can handle complex simulations with ease."
+    "message": "Simulation and optimization of electric machines requires complex and efficient computations. eMotorSolution is powered by EMSolution, a powerful and efficient simulation engine that can handle computational electromagnetics efficiently, accurately, and quickly. EMSolution is binded to Python, allowing users to easily integrate it into their existing workflows and use it in conjunction with other Python libraries and tools."
   }
 }
