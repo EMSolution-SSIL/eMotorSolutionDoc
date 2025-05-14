@@ -50,12 +50,12 @@ project_root
 アプリケーションの設定、新規プロジェクトのテンプレート、一時ファイルなどは `AppData` フォルダに保存されます。このフォルダの場所は、使用している OS によって異なります：
 
 * **Windows**：
-  `C:\Users\<ユーザー名>\AppData\Local\emotor_solution`
+  `C:\Users\<ユーザー名>\AppData\Local\eMotorSolution`
   （このフォルダはデフォルトで非表示になっているため、エクスプローラーで隠しファイルの表示を有効にする必要があります。）
-  または、Windows エクスプローラーや「ファイル名を指定して実行」（Win + R）で `%localappdata%\emotor_solution` と入力して直接開くこともできます。
+  または、Windows エクスプローラーや「ファイル名を指定して実行」（Win + R）で `%localappdata%\eMotorSolution` と入力して直接開くこともできます。
 
 * **Linux**：
-  `/home/<ユーザー名>/.emotor_solution`
+  `/home/<ユーザー名>/.eMotorSolution`
 
 ## 新規作成
 
@@ -81,9 +81,13 @@ project_root
 
 ## エクスポート
 
-**File** メニューの
-<span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE792;</span>**Export** ボタンをクリックすると、現在のプロジェクトをシミュレーション結果なしで保存できます。
-この機能は、プロジェクトを他のユーザーと共有したい場合や、シミュレーション結果を含まないバックアップを作成したい場合に便利です。
+**File** メニューの  
+<span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE792;</span>**Export** ボタンをクリックすると、現在のプロジェクトをシミュレーション結果なしで ZIP ファイルとして保存できます。  
+
+この機能は、プロジェクトを他のユーザーと共有したい場合や、最小限のストレージ容量でプロジェクトをアーカイブしたい場合に便利です。  
+
+作成される ZIP ファイルには、プロジェクトフォルダ全体が含まれます（`project_name.json` ファイル、`Scripts` フォルダ、`Mesh` フォルダ、および解析用の各フォルダ）。ただし、シミュレーション結果や一時ファイルは含まれません。
+
 
 ## テンプレートとして保存
 
