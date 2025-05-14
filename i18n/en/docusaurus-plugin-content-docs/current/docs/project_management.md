@@ -52,7 +52,7 @@ This will open a dialog where you can select the project json file.
 Click on the <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE7C3;</span>**Save** button in the **File** menu to save the current project.
 
 ## Export
-The <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE792;</span>**Export** button in the **File** menu saves the current project as a zip file without the simulation results. This is useful for sharing the project with others or for archiving the project without minimal storage space. The zip file will contain the project folder, including the `project_name.json` file, the `Scripts` and `Mesh` folders, and the analysis folders, but it will not include any simulation results or temporary files.
+The <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE792;</span>**Export** button in the **File** menu saves the current project as a zip file without the simulation results. This is useful for sharing the project with others or for archiving the project with minimal size. The zip file will contain the project folder, including the `project_name.json` file, the `Scripts` and `Mesh` folders, and the analysis folders, but it will not include any simulation results or temporary files.
 
 ## Save As Template
 To save the current project as a template for the new project, click on the **Save As Template** button in the **File** menu. This will open a dialog where you can specify the template name. The template name is required, and it must be unique. The template will be saved in the `AppData` folder, and it will be available for use in the **New** project dialog.

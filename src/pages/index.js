@@ -23,15 +23,6 @@ function HomepageHeader() {
 
           </Translate>
         </p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/tutorials/IPMSM/ModelI">
-            <Translate
-              id="homepage.eMotorSolution.start">
-            </Translate>
-          </Link>
-        </div>
       </div>
     </header>
   );
