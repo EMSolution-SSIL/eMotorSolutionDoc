@@ -7,16 +7,16 @@ title: "Dimension"
 
 <p>![dimension](./img/dimension.png)</p>
 
-ステータおよびロータのコア寸法はここで定義します。
+ステータおよびロータのコア寸法はここで定義します。いずれも半径となります。
 
-- ステータ外半径 (Stator Outer Radius)  
-- ステータ内半径 (Stator Inner Radius)  
-- ロータ外半径 (Rotor Outer Radius)  
-- ロータ内半径 (Rotor Inner Radius)  
+- ステータ外径 (Stator Outer Radius)  
+- ステータ内径 (Stator Inner Radius)  
+- ロータ外径 (Rotor Outer Radius)  
+- ロータ内径 (Rotor Inner Radius)  
 
-寸法の制約はモータのトポロジー（構造）によって異なります。
+寸法の制約はモータの構造によって異なります。
 
-### 内部ロータ型の場合：
+### インナーロータ型の場合：
 
 ```
 
@@ -24,7 +24,7 @@ Stator Outer Radius > Stator Inner Radius > Rotor Outer Radius > Rotor Inner Rad
 
 ```
 
-### 外部ロータ型の場合：
+### アウターロータ型の場合：
 
 ```
 
@@ -32,7 +32,7 @@ Stator Outer Radius > Stator Inner Radius > Rotor Outer Radius > Rotor Inner Rad
 
 ```
 
-上記の制約が満たされない場合、ソフトウェアはログパネルにエラーメッセージを表示し、マシンのチェックポイントが無効としてマークされます。この状態では、ジオメトリは生成されません。制約が満たされるまで、正しい寸法を入力してください。
+上記の制約が満たされない場合、ログパネルにエラーメッセージを表示され、Machineのチェックポイントに無効のマークがつきます。また，この状態ではジオメトリは生成されません。制約を満たす正しい寸法を入力してください。
 
 
 
