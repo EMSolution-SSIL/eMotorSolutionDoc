@@ -20,7 +20,7 @@ eMotorSolutionプログラムをシステムにインストールおよびセッ
 
 ### ステップ 3: インストーラーの実行
 
-1. SSIL HPからeMotoroSolutionのインストーラー（`eMotorSolutionInstaller.exe`）をダウンロードしてください：[https://](https://)
+1. SSIL HPからeMotoroSolutionのインストーラー（`eMotorSolutionInstaller.exe`）をダウンロードしてください
 2. インストーラーファイルを起動してインストール手順を開始します。
 3. 画面上の指示に従ってインストールを完了させます。
 4. インストール完了後、アプリケーションが正常に起動することを確認してください。
