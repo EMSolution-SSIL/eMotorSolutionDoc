@@ -1,6 +1,6 @@
 # For Users
 
-The website as accessible through [https://eskandarih.github.io/eMotorSolutionDoc/](https://eskandarih.github.io/eMotorSolutionDoc/) 
+The website as accessible through [https://EMSolution-SSIL.github.io/eMotorSolutionDoc/](https://EMSolution-SSIL.github.io/eMotorSolutionDoc/) 
 
 # For Developers
 
@@ -11,7 +11,7 @@ The website as accessible through [https://eskandarih.github.io/eMotorSolutionDo
     ```
 2. Clone the repository to your local machine.
     ```bash   
-    git clone https://github.com/eskandarih/eMotorSolutionDoc.git
+    git clone https://github.com/EMSolution-SSIL/eMotorSolutionDoc.git
     ```
 3. Navigate to the cloned directory in your terminal.
     ```bash
