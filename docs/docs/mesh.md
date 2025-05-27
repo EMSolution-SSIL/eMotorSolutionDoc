@@ -9,7 +9,7 @@ title: Mesh
 
 <p class="ems">![メッシュ](./img/mesh.png)</p>
 
-メッシュを生成するには、プロジェクトツリー内の **「Mesh」** チェックポイントを右クリックして **「メッシュ生成」** を選択するか、メッシュタブ内の <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE768;</span> ボタンをクリックします。ジオメトリが検証に合格していれば、メッシュが生成されます。メッシュ生成には、ジオメトリの複雑さと選択されたアルゴリズムに応じて時間がかかることがあります。
+メッシュを生成するには、プロジェクトツリー内の **「Mesh」** チェックポイントを右クリックして **「Generate Mesh」** を選択するか、メッシュタブ内の <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE768;</span> ボタンをクリックします。ジオメトリが検証済みであれば、メッシュが生成されます。メッシュ生成には数分程度の時間を要する場合があります。これはジオメトリの複雑さ、アルゴリズムにも依存します。
 
 <p class="ems">![メッシュ生成](./img/mesh_generation.png)</p>
 
@@ -63,13 +63,13 @@ title: Mesh
 
 ### エアギャップ（Airgap）
 
-- **接線方向分割数（Tangential Divisions）**：エアギャップ線の接線方向におけるメッシュ分割数  
-- **半径方向分割数（Radial Divisions）**：エアギャップ領域の半径方向におけるメッシュ分割数
+- **周方向分割数（Tangential Divisions）**：エアギャップ線の周方向（接線方向）におけるメッシュ分割数  
+- **径方向分割数（Radial Divisions）**：エアギャップ領域の径方向におけるメッシュ分割数
 
 
-### ステーター（Stator）
+### ステータ（Stator）
 
-ステーター領域のメッシュサイズは、エアギャップ線からの距離に応じて次のように定義されます：
+ステータ領域のメッシュサイズは、エアギャップ線からの距離に応じて次のように定義されます：
 
 - **DistMin**：メッシュサイズが `SizeMin` となるまでの距離  
 - **DistMax**：`SizeMax` に切り替わる距離  
@@ -79,15 +79,15 @@ title: Mesh
 
 <p class="ems">![メッシュサイズ](./img/mesh_size.png)</p>
 
-### ローター（Rotor）
+### ロータ（Rotor）
 
-ステーターと同様に、ローター領域も次のパラメータで定義されます：
+ステータと同様に、ロータ領域も次のパラメータで定義されます：
 
 - **DistMin**：`SizeMin` となる距離  
 - **DistMax**：`SizeMax` に切り替わる距離  
 - **SizeMin**：`DistMin` より内側のメッシュサイズ  
 - **SizeMax**：`DistMax` より外側のメッシュサイズ  
-- **Holes**：穴領域のメッシュサイズ（IPMSM および SynRM のみ）  
+- **Holes**：空隙領域のメッシュサイズ（IPMSM および SynRM のみ）  
 - **Magnets**：磁石領域のメッシュサイズ（IPMSM および SPMSM のみ）
 
 

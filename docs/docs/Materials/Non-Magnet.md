@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Non-Magnet
+title: 非磁石材料チェックポイント
 ---
 
 `Non-magnet` 材料は巻線の導電性材料、ステータおよびロータのコア材料、空気、真空などの磁石以外の材料を指します。
