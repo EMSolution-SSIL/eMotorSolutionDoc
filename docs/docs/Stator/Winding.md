@@ -2,7 +2,7 @@
 sidebar_position: 3
 title: Winding
 ---
-# 巻線（Winding）
+# 巻線チェックポイント
 巻線構成には以下のプロパティがあります：
 
 <p>![スロット特性](./img/winding.png)</p>
