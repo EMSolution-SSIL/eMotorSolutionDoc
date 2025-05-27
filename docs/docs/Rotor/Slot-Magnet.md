@@ -12,7 +12,7 @@ title: SPMSM Slot-Magnet
 
 <p>![スロット磁石セレクタ](./img/slot_magnet_selector.png)</p>
 
-表面磁石の幾何学的および材料特性は、それぞれのセクションでプロパティエディターパネル内に表示されます。SPMSMは単一の表面磁石を持つため，ローター内のすべての磁石に適用されることになります。
+表面磁石の幾何学的および材料特性は、それぞれのセクションでプロパティエディターパネル内に表示されます。SPMSMは単一の表面磁石を持つため，ロータ内のすべての磁石に適用されることになります。
 
 - <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE9CE;</span>：表面磁石の形状をプレビュー表示
 - <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xEC5B;</span>：ヒント値をログパネルに出力
