@@ -25,6 +25,14 @@ title: Transient
 - `Delta time`（時間刻み幅）は時間刻み幅を指定します。単位は`sec`です。 
 - `Number of time steps`（時間ステップ数）は時間ステップの数を指定します。
 
+:::info
+モータ解析では1ステップで機械角1度となるように時間刻み幅を決めるのが一般的です。
+この場合の`Delta time`は機械角周期を360で割ることで求まります。
+機械角の周波数：$f_m=N/60$
+機械角周期：$T=1/f_m$
+時間刻み幅：$\Delta t = T/360$
+$f_m$：機械角の周波数`rad/s`，$N$：ロータ回転数`rpm`，$T$：機械角周期，$\Delta t$：時間刻み幅`sec`
+:::
 
 <p class="ems">![add](./img/transient_settings.png)</p>
 
