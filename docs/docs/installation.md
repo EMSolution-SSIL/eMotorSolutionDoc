@@ -25,6 +25,7 @@ eMotorSolutionプログラムをシステムにインストールおよびセッ
 3. 画面上の指示に従ってインストールを完了させます。
 4. インストール完了後、アプリケーションが正常に起動することを確認してください。
 
+<!-- 
 ### ステップ 4: GMSHのダウンロードと解凍
 
 1. GMSH公式サイトにアクセスします：[https://gmsh.info](https://gmsh.info)
@@ -35,6 +36,7 @@ eMotorSolutionプログラムをシステムにインストールおよびセッ
 
 1. eMotorSolutionアプリケーションを開き、**File > Preferences > Paths > GMSH Path**へ進みます。
 2. GMSH実行ファイルへのパス（ステップ4の「3」のフォルダの中にあります）を指定します。
+-->
 
 以上でeMotorSolutionのセットアップは完了です。
 

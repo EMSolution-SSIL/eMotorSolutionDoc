@@ -19,11 +19,12 @@ title: Transient
 
 ## トランジェント解析の設定
 
-<!-- TODO: Sakai-san -->
+トランジェント解析の設定には以下があります：
+- `Rotor Position`（ロータ初期位置）はロータの初期位置を指定します。このとき，角度はd軸（ロータ磁石のN極の方向）とU相巻線のなす角であり、電気角となります。単位は`deg`です。
+- `Rotor speed`（ローター回転数）はロータの回転数を指定します。単位は`rpm`です。
+- `Delta time`（時間刻み幅）は時間刻み幅を指定します。単位は`sec`です。 
+- `Number of time steps`（時間ステップ数）は時間ステップの数を指定します。
 
-<!-- TODO: Kaimori-san -->
-
-...
 
 <p class="ems">![add](./img/transient_settings.png)</p>
 
