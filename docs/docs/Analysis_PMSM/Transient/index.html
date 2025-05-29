@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.7.0">
 <title data-rh="true">Transient | eMotorSolution</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/img/eMotorSolution_icon.svg"><meta data-rh="true" name="twitter:image" content="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/img/eMotorSolution_icon.svg"><meta data-rh="true" property="og:url" content="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/docs/docs/Analysis_PMSM/Transient"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en_US"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Transient | eMotorSolution"><meta data-rh="true" name="description" content="トランジェント解析を追加するには、プロジェクトツリー内の Analysis マイルストーンを右クリックし、Transient を選択します。これにより、Analysis マイルストーンの下にユニークな名前を持つトランジェント解析ノードが作成されます。プロジェクトディレクトリ内には指定された名前の新しいフォルダが作成され、EMSolution 用の入力制御ファイル（JSON形式）が生成されます。"><meta data-rh="true" property="og:description" content="トランジェント解析を追加するには、プロジェクトツリー内の Analysis マイルストーンを右クリックし、Transient を選択します。これにより、Analysis マイルストーンの下にユニークな名前を持つトランジェント解析ノードが作成されます。プロジェクトディレクトリ内には指定された名前の新しいフォルダが作成され、EMSolution 用の入力制御ファイル（JSON形式）が生成されます。"><link data-rh="true" rel="icon" href="/eMotorSolutionDoc/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/docs/docs/Analysis_PMSM/Transient"><link data-rh="true" rel="alternate" href="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/docs/docs/Analysis_PMSM/Transient" hreflang="ja"><link data-rh="true" rel="alternate" href="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/en/docs/docs/Analysis_PMSM/Transient" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/docs/docs/Analysis_PMSM/Transient" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/eMotorSolutionDoc/blog/rss.xml" title="eMotorSolution RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/eMotorSolutionDoc/blog/atom.xml" title="eMotorSolution Atom Feed"><link rel="stylesheet" href="/eMotorSolutionDoc/assets/css/styles.f26be681.css">
-<script src="/eMotorSolutionDoc/assets/js/runtime~main.82fd4519.js" defer="defer"></script>
+<script src="/eMotorSolutionDoc/assets/js/runtime~main.17121fa2.js" defer="defer"></script>
 <script src="/eMotorSolutionDoc/assets/js/main.5c0335d8.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -20,7 +20,13 @@
 <p>解析チェックポイントを右クリックし、表示されるコンテキストメニューからリネーム、削除、検証、フォルダの表示などの操作を行うことができます。</p>
 <p class="ems"><img decoding="async" loading="lazy" alt="add" src="/eMotorSolutionDoc/assets/images/transient_options-6b7780737304479792f8750b1c68be43.png" width="485" height="351" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="トランジェント解析の設定">トランジェント解析の設定<a href="#トランジェント解析の設定" class="hash-link" aria-label="トランジェント解析の設定 への直接リンク" title="トランジェント解析の設定 への直接リンク">​</a></h2>
-<p>...</p>
+<p>トランジェント解析の設定には以下があります：</p>
+<ul>
+<li><code>Rotor Position</code>（ロータ初期位置）はロータの初期位置を指定します。このとき，角度はd軸（ロータ磁石のN極の方向）とU相巻線のなす角であり、電気角となります。単位は<code>deg</code>です。</li>
+<li><code>Rotor speed</code>（ローター回転数）はロータの回転数を指定します。単位は<code>rpm</code>です。</li>
+<li><code>Delta time</code>（時間刻み幅）は時間刻み幅を指定します。単位は<code>sec</code>です。</li>
+<li><code>Number of time steps</code>（時間ステップ数）は時間ステップの数を指定します。</li>
+</ul>
 <p class="ems"><img decoding="async" loading="lazy" alt="add" src="/eMotorSolutionDoc/assets/images/transient_settings-0a4cc83f33cc3aeb0fcc02b43f7705d8.png" width="557" height="276" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="解析の実行">解析の実行<a href="#解析の実行" class="hash-link" aria-label="解析の実行 への直接リンク" title="解析の実行 への直接リンク">​</a></h2>
 <p>解析を実行するには、対応する解析タブ内の <code>Run</code> ボタンをクリックするか、プロジェクトツリー内の解析チェックポイントを右クリックして <code>Run</code> を選択します。解析が実行され、結果は対応するフォルダ内に保存されます。</p>
