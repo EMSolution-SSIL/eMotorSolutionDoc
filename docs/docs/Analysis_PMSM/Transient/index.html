@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.7.0">
 <title data-rh="true">Transient | eMotorSolution</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/img/eMotorSolution_icon.svg"><meta data-rh="true" name="twitter:image" content="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/img/eMotorSolution_icon.svg"><meta data-rh="true" property="og:url" content="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/docs/docs/Analysis_PMSM/Transient"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en_US"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Transient | eMotorSolution"><meta data-rh="true" name="description" content="トランジェント解析を追加するには、プロジェクトツリー内の Analysis マイルストーンを右クリックし、Transient を選択します。これにより、Analysis マイルストーンの下にユニークな名前を持つトランジェント解析ノードが作成されます。プロジェクトディレクトリ内には指定された名前の新しいフォルダが作成され、EMSolution 用の入力制御ファイル（JSON形式）が生成されます。"><meta data-rh="true" property="og:description" content="トランジェント解析を追加するには、プロジェクトツリー内の Analysis マイルストーンを右クリックし、Transient を選択します。これにより、Analysis マイルストーンの下にユニークな名前を持つトランジェント解析ノードが作成されます。プロジェクトディレクトリ内には指定された名前の新しいフォルダが作成され、EMSolution 用の入力制御ファイル（JSON形式）が生成されます。"><link data-rh="true" rel="icon" href="/eMotorSolutionDoc/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/docs/docs/Analysis_PMSM/Transient"><link data-rh="true" rel="alternate" href="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/docs/docs/Analysis_PMSM/Transient" hreflang="ja"><link data-rh="true" rel="alternate" href="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/en/docs/docs/Analysis_PMSM/Transient" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://EMSolution-SSIL.github.io/eMotorSolutionDoc/docs/docs/Analysis_PMSM/Transient" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/eMotorSolutionDoc/blog/rss.xml" title="eMotorSolution RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/eMotorSolutionDoc/blog/atom.xml" title="eMotorSolution Atom Feed"><link rel="stylesheet" href="/eMotorSolutionDoc/assets/css/styles.f26be681.css">
-<script src="/eMotorSolutionDoc/assets/js/runtime~main.aee791fe.js" defer="defer"></script>
+<script src="/eMotorSolutionDoc/assets/js/runtime~main.568e2254.js" defer="defer"></script>
 <script src="/eMotorSolutionDoc/assets/js/main.5c0335d8.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -19,6 +19,33 @@
 </ul>
 <p>解析チェックポイントを右クリックし、表示されるコンテキストメニューからリネーム、削除、検証、フォルダの表示などの操作を行うことができます。</p>
 <p class="ems"><img decoding="async" loading="lazy" alt="add" src="/eMotorSolutionDoc/assets/images/transient_options-6b7780737304479792f8750b1c68be43.png" width="485" height="351" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ネットワークエディタ">ネットワークエディタ<a href="#ネットワークエディタ" class="hash-link" aria-label="ネットワークエディタ への直接リンク" title="ネットワークエディタ への直接リンク">​</a></h2>
+<p><strong>Network Editor</strong>をクリックすると，ポップアップウィンドウで回路構成をテーブル上で編集できます。
+デフォルトで電流源とFEM領域コイルが3相Y結線で接続された回路図が設定されています。
+通常の3相PMSMなら電流源の値を変更するだけで解析が可能となります。
+テーブルは<code>Type</code>、<code>ID</code>、<code>Start</code>、<code>End</code>、<code>Value</code>、<code>Identifier</code>の項目があります。</p>
+<ul>
+<li><code>Type</code>は回路素子の種類をプルアウトメニューから選択します。選択項目には<code>FEM</code>（FEM領域に定義されたコイル）、<code>VPS</code>（電圧源）、<code>CPS</code>（電流源）、<code>R</code>（電気抵抗）、<code>L</code>（インダクタ）、<code>C</code>（キャパシタ）があります。</li>
+<li><code>ID</code>は回路素子内の各素子に割り当てる番号です。各素子は別のIDを持つ必要があります。デフォルトで表の上から順に数値が割り当てられます。</li>
+<li><code>Start</code>と<code>End</code>は回路上のノードを指定するための番号です。<code>Start</code>が始点、<code>End</code>が終点に相当します。</li>
+<li><code>Value</code>はその素子の値か参照するIDを入力します。<!-- -->
+<ul>
+<li><code>FEM</code>はWindingのIDを入力します。3相の場合，1～3が<code>U</code>、<code>V</code>、<code>W</code>相のWindingに相当します。</li>
+<li><code>VPS</code>、<code>CPS</code>はTime IDを入力します。Time IDは次の項目である<strong>Time Evolutions</strong>で設定します。デフォルトの電流源には1～3が割り当てられており、「Time Evolution」にも対応するデフォルトIDが用意されています。単位は<code>VPS</code>が<code>V</code>、<code>CPS</code>が<code>A</code>です。</li>
+<li><code>R</code>、<code>L</code>、<code>C</code>は各素子の値を直接入力します。単位は<code>R</code>が<code>Ω</code>、<code>L</code>が<code>H</code>、<code>C</code>が<code>F</code>です。</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="時間関数の設定">時間関数の設定<a href="#時間関数の設定" class="hash-link" aria-label="時間関数の設定 への直接リンク" title="時間関数の設定 への直接リンク">​</a></h2>
+<p><strong>Time Evolutions</strong>は解析内で用いる時間関数を設定します。例えば、<strong>Network Editor</strong>で設定した<code>CPS</code>などが対象です。デフォルトで<strong>Network Editor</strong>の<code>CPS</code>の<code>U</code>、<code>V</code>、<code>W</code>相に相当するID 1～3が用意されています。テーブルで対象のIDをクリックすると、時間関数を編集できます。<code>Type</code>から関数の設定方法を選択します：</p>
+<ul>
+<li><code>Described by Equation</code>は<code>Proparty</code>の値を入力して関数を定義します。入力テーブルの下に示された関数を参考に各<code>Proparty</code>に対応する値をテーブルで入力してください。</li>
+<li><code>Data Table</code>はテーブル形式で関数を定義します。<code>TIME_expression</code>に時間データ、<code>VALUE_expression</code>に値データを入力します。</li>
+<li><code>Harmonic Time Evolution</code>は余弦関数（<code>cos</code>）の<code>AMPLITUDE</code>（振幅）、<code>TCYCLE</code>（周期）、<code>PHASE</code>（位相）を入力します。</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>備考</div><div class="admonitionContent_BuS1"><p>交流を通電する場合は<code>Harmonic Time Evolution</code>を推奨します。同期モータでは周期は回転数と一致している必要があります。
+回転数をN<code>rpm</code>、極数をpとしたとき、周期T<code>sec</code>は以下で求まります：
+T=(p/2)*(N/60)=pN/120</p></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="トランジェント解析の設定">トランジェント解析の設定<a href="#トランジェント解析の設定" class="hash-link" aria-label="トランジェント解析の設定 への直接リンク" title="トランジェント解析の設定 への直接リンク">​</a></h2>
 <p>トランジェント解析の設定には以下があります：</p>
 <ul>
@@ -28,16 +55,14 @@
 <li><code>Number of time steps</code>（時間ステップ数）は時間ステップの数を指定します。</li>
 </ul>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>備考</div><div class="admonitionContent_BuS1"><p>モータ解析では1ステップで機械角1度となるように時間刻み幅を決めるのが一般的です。
-この場合の<code>Delta time</code>は機械角周期を360で割ることで求まります。
-機械角の周波数：$f_m=N/60$
-機械角周期：$T=1/f_m$
-時間刻み幅：$\Delta t = T/360$
-$f_m$：機械角の周波数<code>rad/s</code>，$N$：ロータ回転数<code>rpm</code>，$T$：機械角周期，$\Delta t$：時間刻み幅<code>sec</code></p></div></div>
+この場合の<code>Delta time</code>は機械角での周期から360を割ることで求まります。
+回転数をNとすると，時間刻み幅Δtは以下でも止まります：
+Δt=60/(360<em>N)=1/(6</em>N)</p></div></div>
 <p class="ems"><img decoding="async" loading="lazy" alt="add" src="/eMotorSolutionDoc/assets/images/transient_settings-0a4cc83f33cc3aeb0fcc02b43f7705d8.png" width="557" height="276" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="解析の実行">解析の実行<a href="#解析の実行" class="hash-link" aria-label="解析の実行 への直接リンク" title="解析の実行 への直接リンク">​</a></h2>
 <p>解析を実行するには、対応する解析タブ内の <code>Run</code> ボタンをクリックするか、プロジェクトツリー内の解析チェックポイントを右クリックして <code>Run</code> を選択します。解析が実行され、結果は対応するフォルダ内に保存されます。</p>
 <div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>警告</div><div class="admonitionContent_BuS1"><p>解析を実行する前に、eMotorSolution は対応するフォルダ内にメッシュファイルが存在するかを確認します。メッシュファイルが存在しない場合は、<code>Mesh</code> フォルダからコピーされます。存在する場合は、既存のメッシュファイルがそのまま使用されます。</p><p>メッシュファイルを変更した場合は、既存のメッシュファイルを削除することを推奨します。これにより、最新のメッシュファイルを用いた解析が確実に行われます。削除するには、プロジェクトツリー内の解析チェックポイントを右クリックし、<code>Purge &gt; Purge All</code> を選択します。</p><p class="ems"><img decoding="async" loading="lazy" alt="add" src="/eMotorSolutionDoc/assets/images/transient_options-6b7780737304479792f8750b1c68be43.png" width="485" height="351" class="img_ev3q"></p><p>また、<code>Purge &gt; Purge Solutions</code> オプションを使用すると、メッシュファイルを削除せずに、すべての解ファイル（ソリューションファイル）のみを削除できます。これは、メッシュファイルを保持したまま古い解析結果を削除してディスク容量を確保したい場合に有効です。</p></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="結果の表示">結果の表示<a href="#結果の表示" class="hash-link" aria-label="結果の表示 への直接リンク" title="結果の表示 への直接リンク">​</a></h2>
-<p>解析チェックポイントを右クリックし、<code>Plot Field</code> または <code>Plot Output</code> を選択することで、フィールド結果および出力結果を表示できます。フィールド結果は <code>Field</code> タブに、出力結果は <code>Output</code> タブにそれぞれ表示されます。内蔵のプロットツールを使用して、結果の可視化が可能です。</p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="ドキュメントページ"><a class="pagination-nav__link pagination-nav__link--prev" href="/eMotorSolutionDoc/docs/category/pmsm-analysis"><div class="pagination-nav__sublabel">前へ</div><div class="pagination-nav__label">PMSM Analysis</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/eMotorSolutionDoc/docs/docs/Analysis_PMSM/BackEMF"><div class="pagination-nav__sublabel">次へ</div><div class="pagination-nav__label">Back EMF</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#トランジェント解析の設定" class="table-of-contents__link toc-highlight">トランジェント解析の設定</a></li><li><a href="#解析の実行" class="table-of-contents__link toc-highlight">解析の実行</a></li><li><a href="#結果の表示" class="table-of-contents__link toc-highlight">結果の表示</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Science Solutions International Laboratory, Inc.</div></div></div></footer></div>
+<p>解析チェックポイントを右クリックし、<code>Plot Field</code> または <code>Plot Output</code> を選択することで、フィールド結果および出力結果を表示できます。フィールド結果は <code>Field</code> タブに、出力結果は <code>Output</code> タブにそれぞれ表示されます。内蔵のプロットツールを使用して、結果の可視化が可能です。</p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="ドキュメントページ"><a class="pagination-nav__link pagination-nav__link--prev" href="/eMotorSolutionDoc/docs/category/pmsm-analysis"><div class="pagination-nav__sublabel">前へ</div><div class="pagination-nav__label">PMSM Analysis</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/eMotorSolutionDoc/docs/docs/Analysis_PMSM/BackEMF"><div class="pagination-nav__sublabel">次へ</div><div class="pagination-nav__label">Back EMF</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ネットワークエディタ" class="table-of-contents__link toc-highlight">ネットワークエディタ</a></li><li><a href="#時間関数の設定" class="table-of-contents__link toc-highlight">時間関数の設定</a></li><li><a href="#トランジェント解析の設定" class="table-of-contents__link toc-highlight">トランジェント解析の設定</a></li><li><a href="#解析の実行" class="table-of-contents__link toc-highlight">解析の実行</a></li><li><a href="#結果の表示" class="table-of-contents__link toc-highlight">結果の表示</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Science Solutions International Laboratory, Inc.</div></div></div></footer></div>
 </body>
 </html>
