@@ -45,3 +45,18 @@ p>img:hover {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22), 0 3px 12px rgba(0, 0, 0, 0.18);
   transform: scale(1.4);
 }
+
+.button {
+  border-radius: 0.5em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18), 0 1.5px 4px rgba(0, 0, 0, 0.15);
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  color: white;
+  background-color: var(--ifm-color-primary);
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
