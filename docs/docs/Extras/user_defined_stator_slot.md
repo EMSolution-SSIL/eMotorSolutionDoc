@@ -29,6 +29,7 @@ The `Points` dictionary contains the coordinates of the points that define the s
 }
 ```
 
+:::warning
 The following remarks should be strictly followed:
 - The slot should be aligned with the x-axis.
 - Point coordinates should be given in meters.
@@ -39,7 +40,7 @@ The following remarks should be strictly followed:
   - `middle_bottom_index`: The point at the bottom of the slot. This point is used for concentrated winding. The y-coordinate should be equal to zero.
   - `middle_top_index`: The point at the top of the slot. The y-coordinate should be equal to zero.
   - `center_index`: The center point of the slot. The y-coordinate should be equal to zero.
-
+:::
 <p class="ems">![add](./img/user_def_slots_indices.png)</p>
 
 # Connections
