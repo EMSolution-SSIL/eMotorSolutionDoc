@@ -93,6 +93,8 @@ It is recommanded to define the points and connections in [Script](https://emsol
 
 Here is an example of a user defined stator slot with the following shape:
 
+<p class="ems">![add](./img/user_def_slots_dim.png)</p>
+
 <p class="ems">![add](./img/user_def_slots_points.png)</p>
 
 
@@ -104,29 +106,29 @@ import numpy as np
 stator_inner_radius = 80.95e-3  # m
 n_slots = 48
 
-opening_width = 2e-3  # m
-opening_height = 1e-3  # m
+w0 = 2e-3  # m
+h0 = 1e-3  # m
 
-wedge_height = 1e-3  # m
+h1 = 1e-3  # m
 
-slot_width = 5e-3  # m
-slot_hight = 30e-3  # m
+w1 = 5e-3  # m
+h2 = 30e-3  # m
 
-fillet_radius = 0.5e-3  # m
+r0 = 0.5e-3  # m
 
-p1_y = -opening_width / 2
+p1_y = -w0 / 2
 p1_x = np.sqrt(stator_inner_radius**2 - p1_y**2)
 
-p2_x = p1_x + opening_height
+p2_x = p1_x + h0
 p2_y = p1_y
 
-p3_x = p2_x + wedge_height
-p3_y = p2_y - slot_width / 2
+p3_x = p2_x + h1
+p3_y = p2_y - w1 / 2
 
-p4_x = p3_x + slot_hight / 2
+p4_x = p3_x + h2 / 2
 p4_y = p3_y
 
-p5_x = p4_x + slot_hight / 2
+p5_x = p4_x + h2 / 2
 p5_y = p4_y
 
 p6_x = p5_x
@@ -160,7 +162,7 @@ cns = {
         ("line", "1", "2"),
         ("line", "2", "3"),
         ("line", "3", "4"),
-        ("fillet", "4", "5", "6", fillet_radius),
+        ("fillet", "4", "5", "6", r0),
         ("line", "6", "7"),
         ("line", "7", "8"),
         ("line", "8", "9"),
@@ -179,7 +181,7 @@ cns = {
     ],
     "single_layer_winding": [
         ("line", "3", "4"),
-        ("fillet", "4", "5", "6", fillet_radius),
+        ("fillet", "4", "5", "6", r0),
         ("line", "6", "7"),
         ("line", "7", "8"),
         ("line", "8", "9"),
@@ -195,7 +197,7 @@ cns = {
         ("line", "12", "3"),
     ],
     "bottom_winding": [
-        ("fillet", "4", "5", "6", fillet_radius),
+        ("fillet", "4", "5", "6", r0),
         ("line", "6", "7"),
         ("line", "7", "8"),
         ("line", "8", "13"),
@@ -203,7 +205,7 @@ cns = {
     ],
     "left_winding": [
         ("line", "3", "4"),
-        ("fillet", "4", "5", "6", fillet_radius),
+        ("fillet", "4", "5", "6", r0),
         ("line", "6", "13"),
         ("line", "13", "12"),
         ("line", "12", "3"),
@@ -229,4 +231,4 @@ ems.update_parameters(
 )
 ```
 
-<a className="button" target="_blank" href={ require("/UserDefinedSlot.zip").default } download>Download User Defined Slot Project</a>
+<a className="button" target="_blank" href={ require("/UserDefinedSlot.zip").default } download>Download The User Defined Slot Project</a>
