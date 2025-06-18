@@ -11,7 +11,7 @@ By default, a `SlotType111` is created when a user defined stator slot is select
 
 <p class="ems">![add](./img/user_def_slots_dialog.png)</p>
 
-# Points
+## Points
 The `Points` dictionary contains the coordinates of the points that define the slot geometry and the index of important points. The template for the `Points` dictionary is as follows:
 
 ```python
@@ -43,7 +43,7 @@ The following remarks should be strictly followed:
 :::
 <p class="ems">![add](./img/user_def_slots_indices.png)</p>
 
-# Connections
+## Connections
 The `Connections` dictionary defines how the points in the `Points` dictionary are connected to form the slot geometry and different styles of windings. The template for the `Connections` dictionary is as follows:
 
 ```python
@@ -88,7 +88,7 @@ Currently, the following connection types are supported:
 - `fillet`: Connects two lines with a fillet. **Syntax**: `("fillet", "point1", "intersection_point", "point2", radius)`
 :::
 
-# Example
+## Example
 It is recommanded to define the points and connections in [Script](https://emsolution-ssil.github.io/eMotorSolutionDoc/docs/docs/script) checkpoint, since it gives more flexibility and allows to use python functions. 
 
 Here is an example of a user defined stator slot with the following shape:
