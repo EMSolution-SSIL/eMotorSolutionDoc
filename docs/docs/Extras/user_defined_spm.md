@@ -104,13 +104,13 @@ The points and connections are defined as follows:
 import ems
 import numpy as np
 
-stator_inner_radius = 80.95e-3  # m
+stator_inner_radius = 80.2e-3  # m
 n_poles = 8
 
-h0 = 30e-3  # m
-w0 = 15e-3  # m
+h0 = 10e-3  # m
+w0 = 40e-3  # m
 h1 = 2e-3  # m
-h2 = 10e-3  # m
+h2 = 5e-3  # m
 
 pole_pitch = 2 * np.pi / n_poles
 
@@ -118,7 +118,7 @@ pa_x = stator_inner_radius * np.cos(pole_pitch / 2)
 pa_y = stator_inner_radius * np.sin(pole_pitch / 2)
 
 pb_x = stator_inner_radius - h0
-pb_y = np.sqrt(stator_inner_radius**2 - pb_x**2)
+pb_y = pb_x * np.tan(pole_pitch / 2)
 
 pc_x = pb_x
 pc_y =  w0 / 2
@@ -148,8 +148,56 @@ pts = {
         "c_bottom": (pc_x, -pc_y),
         "d_bottom": (pd_x, -pd_y),
         "g_bottom": (pg_x, -pg_y),
-    }
+        "center": (0, 0),
+    },
     "pole_top_index": "f",
     "pole_bottom_index": "e",
+    "core_radius_index": "e",
 }
 
+cns = {
+    "slots": [
+        [  
+            ("line", "a_top", "b_top"),
+            ("line", "b_top", "c_top"),
+            ("line", "c_top", "d_top"),
+            ("line", "d_top", "e"),
+            ("line", "e", "d_bottom"),
+            ("line", "d_bottom", "c_bottom"),
+            ("line", "c_bottom", "b_bottom"),
+            ("line", "b_bottom", "a_bottom"),
+            ("arc", "a_bottom", "center", "a_top"),
+        ]
+    ],
+    "magnets": [
+        [
+            ("line", "c_top", "d_top"),
+            ("line", "d_top", "e"),
+            ("line", "e", "d_bottom"),
+            ("line", "d_bottom", "c_bottom"),
+            ("line", "c_bottom", "g_bottom"),
+            ("line", "g_bottom", "f"),
+            ("line", "f", "g_top"),
+            ("line", "g_top", "c_top"),
+        ]
+    ]                  
+}
+
+mgs = [
+    {
+        "coordination": "cartesian",
+        "starting_point": "e",
+        "ending_point": "f",
+    },
+]  
+
+ems.update_parameters(
+    {
+        "pts": pts,
+        "cns": cns,
+        "mgs": mgs,
+    }
+)
+```
+
+<a className="button" target="_blank" href={ require("/UserDefinedSPM.zip").default } download>Download The User Defined SPM Project</a>
