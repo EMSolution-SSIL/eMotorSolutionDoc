@@ -2,18 +2,21 @@
 sidebar_position: 4
 title: User Defined SPM
 ---
-# User Defined Surface Permanent Magnet (SPM)
-The surface permanent magnet machines may have multiple slots with multiple permanent magnets in each slot. Each permanent magnet can also have its own magnetization direction.
-The user-defined Slot-Magnet, takes three parameters: `Points`, `Connections`, and `Magnetization`.
+# ユーザー定義 表面埋込型永久磁石（SPM）
+
+表面埋込型永久磁石モータ（SPM）は、複数のスロットを持ち、各スロットに複数の永久磁石を配置することができます。また、各磁石には個別の磁化方向を設定できます。
+
+ユーザー定義のスロット・マグネットでは、3つのパラメータ：`Points`、`Connections`、`Magnetization` を使用して構成されます。
 
 <p class="ems">![add](./img/user_def_spm_properties.png)</p>
 
-By default, a `SlotM11` is created when a user-defined SPM is selected. By clicking on the <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE70F;</span> **Edit** button, a dialog will open where you can edit the `Points`, `Connections`, and `Magnetization` interactively.
+ユーザー定義のSPMが選択されると、デフォルトで `SlotM11` が作成されます。<span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE70F;</span> **Edit** ボタンをクリックすると、`Points`、`Connections`、`Magnetization` をインタラクティブに編集できるダイアログが表示されます。
 
 <p class="ems">![add](./img/user_def_spm_dialog.png)</p>
 
 ## Points
-The `Points` dictionary contains the coordinates of the points that define the slots and magnets and the index of center-line points. The template for the `Points` dictionary is as follows:
+
+`Points` 辞書には、スロットや磁石の形状を定義するための座標と、中心線に関連するインデックスが含まれます。テンプレートは以下の通りです：
 
 ```python
 {
@@ -26,59 +29,42 @@ The `Points` dictionary contains the coordinates of the points that define the s
     "pole_bottom_index": "point_y",
     "core_radius_index": "point_z",
 }
-```
-
-:::warning
-The following remarks should be strictly followed:
-- The slot should be aligned with the x-axis.
-- Point coordinates should be given in meters.
-- The keys in the `points` dictionary should be unique strings that represent the point names. Other keys like integer or float values are not allowed.
-:::
+````
 
 ## Connections
-The `Connections` dictionary defines how the points in the `Points` dictionary are connected to form the slot and magnet geometries. SPM usually have a single slot-magnet combination, but for more complex designs, it can have multiple slots and magnets. The template for the `Connections` dictionary is as follows:
+
+`Connections` 辞書は、`Points` 内の点をどのように接続してスロットおよび磁石の形状を構成するかを定義します。SPM では通常、1つのスロット-磁石ペアを持ちますが、複雑な設計では複数定義することも可能です。テンプレートは以下の通りです：
 
 ```python
 {
     "slots": [
-        [   # First slot
+        [   # 第1スロット
             ["connection_type", "parameter1", "parameter2", ...],
-            ["connection_type", "parameter1", "parameter2", ...], 
+            ...
         ],
-        [   # Second slot
-            ["connection_type", "parameter1", "parameter2", ...],
-            ["connection_type", "parameter1", "parameter2", ...], 
+        [   # 第2スロット
+            ...
         ],
     ],
     "magnets": [
-        [   # First magnet
-            ["connection_type", "parameter1", "parameter2", ...],
-            ["connection_type", "parameter1", "parameter2", ...], 
+        [   # 第1磁石
+            ...
         ],
-        [   # Second magnet
-            ["connection_type", "parameter1", "parameter2", ...],
-            ["connection_type", "parameter1", "parameter2", ...], 
+        [   # 第2磁石
+            ...
         ],
     ]
 }
 ```
 
-The connections should close the geometry of the slot and windings. And the sequence of the connections should be in counter-clockwise direction.
+接続は形状を閉じる必要があり、定義順は反時計回りとします。
 
-:::info
-Currently, the following connection types are supported:
-- **line**: Connects two points with a straight line.
-    - *Syntax*: `("line", "point1", "point2")`
-- **arc**: Connects two points with an arc. 
-    - *Syntax*: `("arc", "start_point", "center_point", "end_point")`
-- **arc3p**: Connects two points with an arc defined by three points.
-    - *Syntax*: `("arc3p", "start_point", "middle_point", "end_point")`
-- **fillet**: Connects two lines with a fillet.
-    - *Syntax*: `("fillet", "point1", "intersection_point", "point2", radius)`
-:::
+## Magnetization（磁化）
 
-## Magnetization
-In contrast to `points` and `connections`, the `magnetization` is a list of dictionaries, where each dictionary defines the magnetization direction for the magnets defined in `connections`. Each magnet can have its own magnetization type, `cartesian` or `polar`. In case of `cartesian`, the magnetization is defined by a starting and ending point, while in case of `polar`, the magnetization is defined by the `polar_center_point`.
+`Magnetization` は、各磁石の磁化方向を定義する辞書のリストです。各磁石には、`cartesian` または `polar` の磁化方式を指定可能です。
+
+* **cartesian（直交座標系）**：始点と終点で磁化方向を定義
+* **polar（極座標系）**：中心点によって放射方向の磁化を定義
 
 ```python
 [
@@ -94,14 +80,15 @@ In contrast to `points` and `connections`, the `magnetization` is a list of dict
 ]
 ```
 
-## Example
-It is recommanded to define the points and connections in [Script](https://emsolution-ssil.github.io/eMotorSolutionDoc/docs/docs/script) checkpoint, since it gives more flexibility and allows to use python functions.
+## 例
 
-In this example, we will create a user-defined IPM with two holes and two magnets, where both magnets have the same magnetization direction in x-direction.
+[Script チェックポイント](https://emsolution-ssil.github.io/eMotorSolutionDoc/docs/docs/script) で点や接続を定義することを推奨します。これにより柔軟性が増し、Python 関数も使用可能になります。
+
+以下の例では、2つの磁石を持つユーザー定義SPMを作成します。どちらの磁石も x 方向に同じ磁化方向を持ちます。
 
 <p class="ems">![add](./img/user_def_spm_dim.png)</p>
 
-The points and connections are defined as follows:
+点と接続は以下の通り定義されます：
 
 <p class="ems">![add](./img/user_def_spm_points.png)</p>
 
@@ -114,31 +101,28 @@ n_poles = 8
 
 h0 = 10e-3  # m
 w0 = 40e-3  # m
-h1 = 2e-3  # m
-h2 = 5e-3  # m
+h1 = 2e-3   # m
+h2 = 5e-3   # m
 
 pole_pitch = 2 * np.pi / n_poles
 
+# 各点の座標を計算
 pa_x = stator_inner_radius * np.cos(pole_pitch / 2)
 pa_y = stator_inner_radius * np.sin(pole_pitch / 2)
-
 pb_x = stator_inner_radius - h0
 pb_y = pb_x * np.tan(pole_pitch / 2)
-
 pc_x = pb_x
 pc_y =  w0 / 2
-
 pd_x = pc_x - h1
 pd_y = pc_y
-
 pe_x = pd_x
 pe_y = 0
-
 pf_x = pe_x + h1 + h2
 pf_y = 0
-
 pg_x = pf_x
 pg_y = pc_y
+
+# 点の定義
 pts = {
     "points": {
         "a_top": (pa_x, pa_y),
@@ -160,6 +144,7 @@ pts = {
     "core_radius_index": "e",
 }
 
+# 接続定義
 cns = {
     "slots": [
         [  
@@ -188,6 +173,7 @@ cns = {
     ]                  
 }
 
+# 磁化方向の定義
 mgs = [
     {
         "coordination": "cartesian",
@@ -196,6 +182,7 @@ mgs = [
     },
 ]  
 
+# パラメータ更新
 ems.update_parameters(
     {
         "pts": pts,
@@ -205,4 +192,4 @@ ems.update_parameters(
 )
 ```
 
-<a className="button" target="_blank" href={ require("/UserDefinedSPM.zip").default } download>Download The User Defined SPM Project</a>
+<a className="button" target="\_blank" href={ require("/UserDefinedSPM.zip").default } download>ユーザー定義SPMプロジェクトをダウンロード</a>

@@ -2,19 +2,17 @@
 sidebar_position: 2
 title: User Defined Stator Slot
 ---
-# ユーザー定義ステータスロット
-
-ユーザー定義ステータスロットでは、`Points` および `Connections` の2つのパラメータを使用します。これらはステータスロット、ウェッジ、およびさまざまな巻線スタイルの形状を定義する Python の辞書型（dictionary）であり、`Points` 辞書にはスロット形状を構成する点の座標、`Connections` 辞書にはその点同士の接続方法が定義されます。
+# User Defined Stator Slot
+User defined stator slots take two parameters: `Points` and `Connections`. They are python dictionaries that define the geometry of the stator slot, wedge and different styles of windings. The `Points` dictionary contains the coordinates of the points that define the slot geometry, while the `Connections` dictionary defines how these points are connected to form the slot.
 
 <p class="ems">![add](./img/user_def_slots_properties.png)</p>
 
-ユーザー定義ステータスロットを選択すると、デフォルトで `SlotType111` が作成されます。<span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE70F;</span> **Edit** ボタンをクリックすると、`Points` および `Connections` をインタラクティブに編集できるダイアログが表示されます。
+By default, a `SlotType111` is created when a user defined stator slot is selected. By clicking on the <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE70F;</span>**Edit** button, a dialog will open where you can edit the `Points` and `Connections` interactively. 
 
 <p class="ems">![add](./img/user_def_slots_dialog.png)</p>
 
 ## Points
-
-`Points` 辞書には、スロット形状を構成する点の座標と、重要な点のインデックスが含まれます。テンプレートは以下の通りです：
+The `Points` dictionary contains the coordinates of the points that define the slot geometry and the index of important points. The template for the `Points` dictionary is as follows:
 
 ```python
 {
@@ -29,58 +27,81 @@ title: User Defined Stator Slot
     "middle_top_index": "point_d",
     "center_index": "point_e",
 }
-````
+```
 
+:::warning
+The following remarks should be strictly followed:
+- The slot should be aligned with the x-axis.
+- Point coordinates should be given in meters.
+- The keys in the `points` dictionary should be unique strings that represent the point names. Other keys like integer or float values are not allowed.
+- The `opening_top_index`, `opening_bottom_index`, `middle_bottom_index`, `middle_top_index`, and `center_index` should refer to the keys in the `points` dictionary according to the following rules:
+  - `opening_top_index`: The point at the top of the slot opening. The distance from the origin should be exactly equal to the stator inner radius.
+  - `opening_bottom_index`: The point at the bottom of the slot opening. The distance from the origin should be exactly equal to the stator inner radius.
+  - `middle_bottom_index`: The point at the bottom of the slot. This point is used for concentrated winding. The y-coordinate should be equal to zero.
+  - `middle_top_index`: The point at the top of the slot. The y-coordinate should be equal to zero.
+  - `center_index`: The center point of the slot. The y-coordinate should be equal to zero.
+:::
 <p class="ems">![add](./img/user_def_slots_indices.png)</p>
 
 ## Connections
-
-`Connections` 辞書は、`Points` 辞書内の点をどのように接続してスロット形状および各種巻線スタイルを形成するかを定義します。テンプレートは以下の通りです：
+The `Connections` dictionary defines how the points in the `Points` dictionary are connected to form the slot geometry and different styles of windings. The template for the `Connections` dictionary is as follows:
 
 ```python
 {
     "slot": [
       ["connection_type", "parameter1", "parameter2", ...],
-      ...
+      ["connection_type", "parameter1", "parameter2", ...], 
     ],
     "wedge": [
       ["connection_type", "parameter1", "parameter2", ...],
-      ...
+      ["connection_type", "parameter1", "parameter2", ...], 
     ],
     "single_layer_winding": [
       ["connection_type", "parameter1", "parameter2", ...],
-      ...
+      ["connection_type", "parameter1", "parameter2", ...], 
     ],
     "top_winding": [
       ["connection_type", "parameter1", "parameter2", ...],
-      ...
+      ["connection_type", "parameter1", "parameter2", ...], 
     ],
     "bottom_winding": [
       ["connection_type", "parameter1", "parameter2", ...],
-      ...
+      ["connection_type", "parameter1", "parameter2", ...], 
     ],
     "left_winding": [
       ["connection_type", "parameter1", "parameter2", ...],
-      ...
+      ["connection_type", "parameter1", "parameter2", ...], 
     ],
     "right_winding": [
       ["connection_type", "parameter1", "parameter2", ...],
-      ...
+      ["connection_type", "parameter1", "parameter2", ...], 
     ],
 }
 ```
+The connections should close the geometry of the slot and windings. And the sequence of the connections should be in counter-clockwise direction.
 
-接続はスロットや巻線形状を閉じるように記述し、反時計回りの順序で定義する必要があります。
+:::info
+Currently, the following connection types are supported:
+- **line**: Connects two points with a straight line.
+    - *Syntax*: `("line", "point1", "point2")`
+- **arc**: Connects two points with an arc. 
+    - *Syntax*: `("arc", "start_point", "center_point", "end_point")`
+- **arc3p**: Connects two points with an arc defined by three points.
+    - *Syntax*: `("arc3p", "start_point", "middle_point", "end_point")`
+- **fillet**: Connects two lines with a fillet.
+    - *Syntax*: `("fillet", "point1", "intersection_point", "point2", radius)`
+:::
 
-## 例
+## Example
+It is recommanded to define the points and connections in [Script](https://emsolution-ssil.github.io/eMotorSolutionDoc/docs/docs/script) checkpoint, since it gives more flexibility and allows to use python functions. 
 
-スクリプトで点と接続を定義することを推奨します（[Script チェックポイント](https://emsolution-ssil.github.io/eMotorSolutionDoc/docs/docs/script)）。柔軟性が高く、Python 関数の利用も可能です。
-
-以下は、次の形状を持つユーザー定義ステータスロットの例です：
+Here is an example of a user defined stator slot with the following shape:
 
 <p class="ems">![add](./img/user_def_slots_dim.png)</p>
 
 <p class="ems">![add](./img/user_def_slots_points.png)</p>
+
+
 
 ```python
 import ems
@@ -91,21 +112,29 @@ n_slots = 48
 
 w0 = 2e-3  # m
 h0 = 1e-3  # m
+
 h1 = 1e-3  # m
+
 w1 = 5e-3  # m
 h2 = 30e-3  # m
+
 r0 = 0.5e-3  # m
 
 p1_y = -w0 / 2
 p1_x = np.sqrt(stator_inner_radius**2 - p1_y**2)
+
 p2_x = p1_x + h0
 p2_y = p1_y
+
 p3_x = p2_x + h1
 p3_y = p2_y - w1 / 2
+
 p4_x = p3_x + h2 / 2
 p4_y = p3_y
+
 p5_x = p4_x + h2 / 2
 p5_y = p4_y
+
 p6_x = p5_x
 p6_y = 0
 
@@ -195,6 +224,7 @@ cns = {
     ],
 }
 
+
 ems.update_parameters(
     {
         "stator_inner_radius": stator_inner_radius,
@@ -205,6 +235,4 @@ ems.update_parameters(
 )
 ```
 
-<a className="button" target="\_blank" href={ require("/UserDefinedSlot.zip").default } download>ユーザー定義スロットプロジェクトをダウンロード</a>
-
-
+<a className="button" target="_blank" href={ require("/UserDefinedSlot.zip").default } download>Download The User Defined Slot Project</a>

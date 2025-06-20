@@ -2,21 +2,19 @@
 sidebar_position: 3
 title: User Defined IPM
 ---
-# ユーザー定義埋込永久磁石（IPM）
+# User Defined Interior Permanent Magnet (IPM) 
+The interior permanent magnet machines may have multiple holes with multiple permanent magnets in each hole. Each permanent magnet can also have its own magnetization direction.
 
-埋込型永久磁石モータ（IPM）は、複数の穴を持ち、それぞれの穴に複数の永久磁石を配置できます。また、各磁石には個別の磁化方向を設定することが可能です。
-
-ユーザー定義のホール・マグネットは、3つのパラメータ：`Points`、`Connections`、`Magnetization` を使用して構成されます。
+The user-defined Hole-Magnet, takes three parameters: `Points`, `Connections`, and `Magnetization`.
 
 <p class="ems">![add](./img/user_def_ipm_properties.png)</p>
 
-ユーザー定義のIPMが選択されると、デフォルトで `Hole Type 52` が作成されます。<span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE70F;</span> **Edit** ボタンをクリックすると、`Points`、`Connections`、`Magnetization` をインタラクティブに編集できるダイアログが表示されます。
+By default, a `Hole Type 52` is created when a user-defined IPM is selected. By clicking on the <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE70F;</span> **Edit** button, a dialog will open where you can edit the `Points`, `Connections`, and `Magnetization` interactively.
 
 <p class="ems">![add](./img/user_def_ipm_dialog.png)</p>
 
 ## Points
-
-`Points` 辞書には、穴および磁石の形状を定義するための座標と、中心線に関連するインデックスが含まれます。テンプレートは以下の通りです：
+The `Points` dictionary contains the coordinates of the points that define the holes and magnets and the index of center-line points. The template for the `Points` dictionary is as follows:
 
 ```python
 {
@@ -28,42 +26,59 @@ title: User Defined IPM
     "pole_top_index": "point_x",
     "pole_bottom_index": "point_y",
 }
-````
+```
+
+:::warning
+The following remarks should be strictly followed:
+- The slot should be aligned with the x-axis.
+- Point coordinates should be given in meters.
+- The keys in the `points` dictionary should be unique strings that represent the point names. Other keys like integer or float values are not allowed.
+:::
 
 ## Connections
-
-`Connections` 辞書は、`Points` 内の点をどのように接続して穴や磁石の形状を構成するかを定義します。テンプレートは以下の通りです：
+The `Connections` dictionary defines how the points in the `Points` dictionary are connected to form the hole and magnet geometries. The template for the `Connections` dictionary is as follows:
 
 ```python
 {
     "holes": [
-        [    # 第1の穴
+        [    # First hole
             ["connection_type", "parameter1", "parameter2", ...],
-            ...
+            ["connection_type", "parameter1", "parameter2", ...], 
         ],
-        [    # 第2の穴
-            ...
+        [    # Second hole
+            ["connection_type", "parameter1", "parameter2", ...],
+            ["connection_type", "parameter1", "parameter2", ...], 
         ],
     ],
     "magnets": [
-        [    # 第1の磁石
-            ...
+        [   # First magnet
+            ["connection_type", "parameter1", "parameter2", ...],
+            ["connection_type", "parameter1", "parameter2", ...], 
         ],
-        [    # 第2の磁石
-            ...
+        [   # Second magnet
+            ["connection_type", "parameter1", "parameter2", ...],
+            ["connection_type", "parameter1", "parameter2", ...], 
         ],
     ],
 }
 ```
 
-接続は形状を閉じる必要があり、定義順は反時計回りとします。
+The connections should close the geometry of the slot and windings. And the sequence of the connections should be in counter-clockwise direction.
 
-## Magnetization（磁化）
+:::info
+Currently, the following connection types are supported:
+- **line**: Connects two points with a straight line.
+    - *Syntax*: `("line", "point1", "point2")`
+- **arc**: Connects two points with an arc. 
+    - *Syntax*: `("arc", "start_point", "center_point", "end_point")`
+- **arc3p**: Connects two points with an arc defined by three points.
+    - *Syntax*: `("arc3p", "start_point", "middle_point", "end_point")`
+- **fillet**: Connects two lines with a fillet.
+    - *Syntax*: `("fillet", "point1", "intersection_point", "point2", radius)`
+:::
 
-`Points` や `Connections` とは異なり、`Magnetization` は磁石ごとの磁化方向を定義する辞書のリストです。各磁石は `cartesian` または `polar` のいずれかの磁化方式を指定できます。
-
-* **cartesian（直交座標系）**：始点と終点で磁化方向を定義
-* **polar（極座標系）**：中心点によって放射方向の磁化を定義
+## Magnetization
+In contrast to `points` and `connections`, the `magnetization` is a list of dictionaries, where each dictionary defines the magnetization direction for the magnets defined in `connections`. Each magnet can have its own magnetization type, `cartesian` or `polar`. In case of `cartesian`, the magnetization is defined by a starting and ending point, while in case of `polar`, the magnetization is defined by the `polar_center_point`.
 
 ```python
 [
@@ -79,15 +94,14 @@ title: User Defined IPM
 ]
 ```
 
-## 例
+## Example
+It is recommanded to define the points and connections in [Script](https://emsolution-ssil.github.io/eMotorSolutionDoc/docs/docs/script) checkpoint, since it gives more flexibility and allows to use python functions.
 
-[Script チェックポイント](https://emsolution-ssil.github.io/eMotorSolutionDoc/docs/docs/script) で点や接続を定義することを推奨します。これにより柔軟性が増し、Python 関数も使用可能になります。
-
-以下の例では、2つの穴と2つの磁石を持つIPMを作成します。どちらの磁石も x 方向に同じ磁化方向を持ちます。
+In this example, we will create a user-defined IPM with two holes and two magnets, where both magnets have the same magnetization direction in x-direction.
 
 <p class="ems">![add](./img/user_def_ipm_dim.png)</p>
 
-点と接続は以下の通り定義されます：
+The points and connections are defined as follows:
 
 <p class="ems">![add](./img/user_def_ipm_points.png)</p>
 
@@ -103,33 +117,42 @@ W2 = 10e-3  # m
 R0 = 1e-3  # m
 R1 = 3e-3  # m
 
-# 各点の座標を計算
 point_a_x = H0 + H1 / 2
 point_a_y = W0 / 2
+
 point_b_x = H0
 point_b_y = W0 / 2
+
 point_c_x = H0
 point_c_y = point_b_y + W2
+
 point_d_x = H0
 point_d_y = point_b_y + W1 + H1
+
 point_e_x = H0 + H1 + H2
 point_e_y = point_d_y
+
 point_f_x = point_e_x + H1 / 2
 point_f_y = point_e_y - H1 / 2
+
 point_g_x = point_e_x
 point_g_y = point_e_y - H1
+
 point_h_x = H0 + H1
 point_h_y = point_g_y
+
 point_i_x = point_c_x + H1
 point_i_y = point_c_y
+
 point_j_x = point_b_x + H1
 point_j_y = point_b_y
+
 point_k_x = point_e_x
 point_k_y = point_e_y - H1 / 2
+
 point_x_x = H0
 point_x_y = 0
 
-# 点の定義
 pts = {
     "pole_top_index": "x",
     "pole_bottom_index": "x",
@@ -160,7 +183,6 @@ pts = {
     },
 }
 
-# 接続定義
 cns = {
     "holes": [
         [
@@ -194,7 +216,6 @@ cns = {
     ],
 }
 
-# 磁化方向の定義
 mgs = [
     {"coordination": "cartesian", "starting_point": "c_top", "ending_point": "i_top"},
     {
@@ -211,7 +232,7 @@ ems.update_parameters(
         "mgs": mgs,
     }
 )
+
 ```
 
-<a className="button" target="\_blank" href={ require("/UserDefinedIPM.zip").default } download>ユーザー定義IPMプロジェクトをダウンロード</a>
-
+<a className="button" target="_blank" href={ require("/UserDefinedIPM.zip").default } download>Download The User Defined IPM Project</a>

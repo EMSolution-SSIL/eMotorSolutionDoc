@@ -2,19 +2,17 @@
 sidebar_position: 5
 title: User Defined SynRM
 ---
-# ユーザー定義 同期リラクタンストルクモータ（SynRM）
-
-同期リラクタンストルクモータ（SynRM）は、複数の空孔（スロット）を持つ構造を設計できます。ユーザー定義 SynRM では、2つのパラメータ：`Points` と `Connections` を使用して、形状を構成します。
+# User Defined Synchronous Reluctance Motor (SynRM)
+The synchronous reluctance motor (SynRM) can have multiple holes. The user-defined SynRM takes two parameters: `Points` and `Connections`.
 
 <p class="ems">![add](./img/user_def_synrm_properties.png)</p>
 
-ユーザー定義 SynRM を選択すると、デフォルトで `Hole Type 61` が作成されます。<span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE70F;</span> **Edit** ボタンをクリックすると、`Points` および `Connections` をインタラクティブに編集できるダイアログが表示されます。
+By default, a `Hole Type 61` is created when a user-defined SynRM is selected. By clicking on the <span style={{ fontFamily: 'Segoe Fluent Icons', fontSize: '1.0em' }}>&#xE70F;</span> **Edit** button, a dialog will open where you can edit the `Points` and `Connections` interactively.
 
 <p class="ems">![add](./img/user_def_spm_dialog.png)</p>
 
 ## Points
-
-`Points` 辞書には、スロット形状を構成する点の座標と、中心線に関係するインデックスが含まれます。テンプレートは以下の通りです：
+The `Points` dictionary contains the coordinates of the points that define the slots and magnets and the index of center-line points. The template for the `Points` dictionary is as follows:
 
 ```python
 {
@@ -26,37 +24,55 @@ title: User Defined SynRM
     "pole_top_index": "point_x",
     "pole_bottom_index": "point_y",
 }
-````
+```
+
+:::warning
+The following remarks should be strictly followed:
+- The slot should be aligned with the x-axis.
+- Point coordinates should be given in meters.
+- The keys in the `points` dictionary should be unique strings that represent the point names. Other keys like integer or float values are not allowed.
+:::
 
 ## Connections
-
-`Connections` 辞書は、`Points` 内の点をどのように接続してスロット形状を構成するかを定義します。テンプレートは以下の通りです：
+The `Connections` dictionary defines how the points in the `Points` dictionary are connected to form the slot geometries. The template for the `Connections` dictionary is as follows:
 
 ```python
 {
     "slots": [
-        [   # 第1スロット
+        [   # First slot
             ["connection_type", "parameter1", "parameter2", ...],
-            ...
+            ["connection_type", "parameter1", "parameter2", ...], 
         ],
-        [   # 第2スロット
-            ...
+        [   # Second slot
+            ["connection_type", "parameter1", "parameter2", ...],
+            ["connection_type", "parameter1", "parameter2", ...], 
         ],
     ]
 }
 ```
 
-接続はスロット形状を閉じるように構成し、接続順は反時計回りにしてください。
+The connections should close the geometry of the slot and windings. And the sequence of the connections should be in counter-clockwise direction.
 
-## 例
+:::info
+Currently, the following connection types are supported:
+- **line**: Connects two points with a straight line.
+    - *Syntax*: `("line", "point1", "point2")`
+- **arc**: Connects two points with an arc. 
+    - *Syntax*: `("arc", "start_point", "center_point", "end_point")`
+- **arc3p**: Connects two points with an arc defined by three points.
+    - *Syntax*: `("arc3p", "start_point", "middle_point", "end_point")`
+- **fillet**: Connects two lines with a fillet.
+    - *Syntax*: `("fillet", "point1", "intersection_point", "point2", radius)`
+:::
 
-[Script チェックポイント](https://emsolution-ssil.github.io/eMotorSolutionDoc/docs/docs/script) で点や接続を定義することを推奨します。柔軟性が高まり、Python 関数を活用可能です。
+## Example
+It is recommanded to define the points and connections in [Script](https://emsolution-ssil.github.io/eMotorSolutionDoc/docs/docs/script) checkpoint, since it gives more flexibility and allows to use python functions.
 
-以下の例では、2つの穴を持つユーザー定義 SynRM を作成します。
+In this example, we will create a user-defined SynRM with two holes.
 
 <p class="ems">![add](./img/user_def_synrm_dim.png)</p>
 
-点と接続の定義は以下の通りです：
+The points and connections are defined as follows:
 
 <p class="ems">![add](./img/user_def_synrm_points.png)</p>
 
@@ -64,14 +80,13 @@ title: User Defined SynRM
 import ems
 
 H0 = 65e-3  # m
-H1 = 2e-3   # m
-H2 = 5e-3   # m
-W0 = 2e-3   # m
+H1 = 2e-3  # m
+H2 = 5e-3  # m
+W0 = 2e-3  # m
 W1 = 15e-3  # m
-R0 = 0.5e-3 # m
-R1 = 3e-3   # m
+R0 = 0.5e-3  # m
+R1 = 3e-3  # m
 
-# 各点の座標を計算
 point_a_x = H0 + H1 / 2
 point_a_y = W0 / 2
 
@@ -111,7 +126,6 @@ point_n_y = W0 / 2
 point_x_x = H0
 point_x_y = 0
 
-# 点の定義
 pts = {
     "pole_top_index": "x",
     "pole_bottom_index": "x",
@@ -144,7 +158,6 @@ pts = {
     },
 }
 
-# 接続定義
 cns = {
     "holes": [
         [
@@ -170,7 +183,7 @@ cns = {
     ]
 }
 
-# パラメータの更新
+
 ems.update_parameters(
     {
         "pts": pts,
@@ -178,5 +191,4 @@ ems.update_parameters(
     }
 )
 ```
-
-<a className="button" target="\_blank" href={ require("/UserDefinedSynRM.zip").default } download>ユーザー定義 SynRM プロジェクトをダウンロード</a>
+<a className="button" target="_blank" href={ require("/UserDefinedSynRM.zip").default } download>Download The User Defined SynRM Project</a>
