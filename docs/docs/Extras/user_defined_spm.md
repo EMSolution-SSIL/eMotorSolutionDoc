@@ -24,6 +24,7 @@ The `Points` dictionary contains the coordinates of the points that define the s
     },
     "pole_top_index": "point_x",
     "pole_bottom_index": "point_y",
+    "core_radius_index": "point_z",
 }
 ```
 
@@ -66,10 +67,14 @@ The connections should close the geometry of the slot and windings. And the sequ
 
 :::info
 Currently, the following connection types are supported:
-- `line`: Connects two points with a straight line. **Syntax**: `("line", "point1", "point2")`
-- `arc`: Connects two points with an arc. **Syntax**: `("arc", "start_point", "center_point", "end_point")`
-- `arc3p`: Connects two points with an arc defined by three points. **Syntax**: `("arc3p", "start_point", "middle_point", "end_point")`
-- `fillet`: Connects two lines with a fillet. **Syntax**: `("fillet", "point1", "intersection_point", "point2", radius)`
+- **line**: Connects two points with a straight line.
+    - *Syntax*: `("line", "point1", "point2")`
+- **arc**: Connects two points with an arc. 
+    - *Syntax*: `("arc", "start_point", "center_point", "end_point")`
+- **arc3p**: Connects two points with an arc defined by three points.
+    - *Syntax*: `("arc3p", "start_point", "middle_point", "end_point")`
+- **fillet**: Connects two lines with a fillet.
+    - *Syntax*: `("fillet", "point1", "intersection_point", "point2", radius)`
 :::
 
 ## Magnetization
