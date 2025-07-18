@@ -1,17 +1,12 @@
 ---
 sidebar_position: 1
-title: Load Project
+title: load_project()
 ---
 
-# Load Project
+# load_project
 To load an existing project in the eMotorSolution API, you can use the `load_project` function. This function allows you to access the parameters and configurations of a previously saved project.
 
 It is recommended to generate a project file using the eMotorSolution GUI and then load it using the API for further analysis or modifications.
-
-## Syntax
-`
-load_project(path: str)
-`
 
 :::tip[Parameters]
 - **path**: `str`,  The file path to the project JSON file.
@@ -19,7 +14,7 @@ load_project(path: str)
 
 
 :::tip[Returns]
-- **Project**: An instance of the `Project` class containing the loaded project data.
+- **Project**: An instance of the [`Project`](/docs/api/Project/index.md) class containing the loaded project data.
 :::
     
 
