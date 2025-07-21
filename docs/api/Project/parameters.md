@@ -5,7 +5,7 @@ title: parameters
 
 # parameters
 
-The `parameters` attribute of the `Project` class represents the user-defined parameters of the project. These parameters are unit-less values that can be controlled by the user through the [Script](/docs/docs/script.md) checkpoint in the GUI. Such parameters can be referred to inside the expressions of the [Properties Panel](/docs/docs/main_window.md#properties-panel).
+The `parameters` attribute of the `Project` class represents the user-defined parameters of the project. These parameters are unit-less values that can be controlled by the user through the [Script](/docs/docs/script) checkpoint in the GUI. Such parameters can be referred to inside the expressions of the [Properties Panel](/docs/docs/main_window#properties-panel).
 
 The other alternative to using the `parameters` attribute is to call `Project.script.parameters` which returns the same dictionary. 
 

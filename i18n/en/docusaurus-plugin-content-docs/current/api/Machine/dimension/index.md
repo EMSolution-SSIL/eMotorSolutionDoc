@@ -3,7 +3,7 @@ sidebar_position: 2
 title: "dimension"
 ---
 # dimension
-The `dimension` attribute of the [`MachineData`](/docs/api/Machine/) class represents the  main dimensions of the machine. In the GUI, this is displayed as a [checkpoint](/docs/docs/Machine/Dimension.md).
+The `dimension` attribute of the [`MachineData`](/docs/api/Machine/) class represents the  main dimensions of the machine. In the GUI, this is displayed as a [checkpoint](/docs/docs/Machine/Dimension).
 
 It is an instance of the `MachineDimensionData` class accessible through the `eMotorSolution.CheckPoints.Machine.Dimension` module.
 
@@ -23,11 +23,11 @@ It is an instance of the `MachineDimensionData` class accessible through the `eM
 ## Methods
 | Method | Description |
 |--------|-------------|
-| [set_stator_outer_radius](/docs/api/Machine/dimension/set_stator_outer_radius.md)(expression, unit) | Sets the outer radius of the stator. |
-| [set_stator_inner_radius](/docs/api/Machine/dimension/set_stator_inner_radius.md)(expression, unit) | Sets the inner radius of the stator. |
-| [set_rotor_outer_radius](/docs/api/Machine/dimension/set_rotor_outer_radius.md)(expression, unit) | Sets the outer radius of the rotor. |
-| [set_rotor_inner_radius](/docs/api/Machine/dimension/set_rotor_inner_radius.md)(expression, unit) | Sets the inner radius of the rotor. |
-| [set_shaft_material](/docs/api/Machine/dimension/set_shaft_material.md)(material) | Sets the material of the shaft. |
+| [set_stator_outer_radius](/docs/api/Machine/dimension/set_stator_outer_radius)(expression, unit) | Sets the outer radius of the stator. |
+| [set_stator_inner_radius](/docs/api/Machine/dimension/set_stator_inner_radius)(expression, unit) | Sets the inner radius of the stator. |
+| [set_rotor_outer_radius](/docs/api/Machine/dimension/set_rotor_outer_radius)(expression, unit) | Sets the outer radius of the rotor. |
+| [set_rotor_inner_radius](/docs/api/Machine/dimension/set_rotor_inner_radius)(expression, unit) | Sets the inner radius of the rotor. |
+| [set_shaft_material](/docs/api/Machine/dimension/set_shaft_material)(material) | Sets the material of the shaft. |
 | validate() | Returns the validation status in dictionary format. |
 
 ## Attributes

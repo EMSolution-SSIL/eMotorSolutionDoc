@@ -12,8 +12,8 @@ The `Project` class is inherited from the [dataclasses](https://docs.python.org/
 
 | Method | Description |
 |---|---|
-| [save](/docs/api/Project/save.md)() | Saves the project to the `Project.path` file. |
-| [show](/docs/api/Project/show.md)(legend, ...) | Shows the machine geometry in matplotlib. |
+| [save](/docs/api/Project/save)() | Saves the project to the `Project.path` file. |
+| [show](/docs/api/Project/show)(legend, ...) | Shows the machine geometry in matplotlib. |
 | validate() | Returns the validation status in dictionary format. |
 
 
@@ -23,8 +23,8 @@ The `Project` class is inherited from the [dataclasses](https://docs.python.org/
 | `path` | `str` The file path to the project JSON file. :warning: *read-only* |
 | `directory` | `str` The directory where the project is saved. :warning: *read-only* |
 | `name` | `str` The name of the project. :warning: *read-only* |
-| [`parameters`](/docs/api/Project/parameters.md) | `dict` The user-defined parameters of the project. |
-| [`machine`](/docs/api/Machine/index.md) | `MachineData` The machine data of the project, including type and dimensions. |
+| [`parameters`](/docs/api/Project/parameters) | `dict` The user-defined parameters of the project. |
+| [`machine`](/docs/api/Machine) | `MachineData` The machine data of the project, including type and dimensions. |
 
 ## Example Usage
 ```python

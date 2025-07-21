@@ -24,5 +24,5 @@ It is an instance of the `MachineData` class, which contains two main attributes
 |---|---|
 | [type](/docs/api/Machine/type/) | The `MachineTypeData` instance that contains the machine type data. |
 | [dimension](/docs/api/Machine/dimension/) | The `MachineDimensionData` instance that contains the machine dimension data. |
-| [air_gap_length](/docs/api/Machine/air_gap_length.md) | `float` Returns the air gap length of the machine in meters. :warning: *read-only* |
-| [air_gap_radius](/docs/api/Machine/air_gap_radius.md) | `float` Returns the air gap radius of the machine in meters. :warning: *read-only* |
+| [air_gap_length](/docs/api/Machine/air_gap_length) | `float` Returns the air gap length of the machine in meters. :warning: *read-only* |
+| [air_gap_radius](/docs/api/Machine/air_gap_radius) | `float` Returns the air gap radius of the machine in meters. :warning: *read-only* |

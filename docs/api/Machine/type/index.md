@@ -3,7 +3,7 @@ sidebar_position: 1
 title: "type"
 ---
 # type
-The `type` attribute of the [`MachineData`](/docs/api/Machine/) class represents the type of the machine. In the GUI, this is displayed as a [checkpoint](/docs/docs/Machine/Type.md).
+The `type` attribute of the [`MachineData`](/docs/api/Machine/) class represents the type of the machine. In the GUI, this is displayed as a [checkpoint](/docs/docs/Machine/Type).
 
 It is an instance of the `MachineTypeData` class accessible through the `eMotorSolution.CheckPoints.Machine.Type` module.
 
@@ -18,9 +18,9 @@ It is an instance of the `MachineTypeData` class accessible through the `eMotorS
 ## Methods
 | Method | Description |
 |--------|-------------|
-| [set_machine_type](/docs/api/Machine/type/set_machine_type.md)(machine_type: str) | Sets the machine type to `"IPMSM"`, `"SPMSM"`, or `"SynRM"`. |
-| [set_pole_number](/docs/api/Machine/type/set_pole_number.md)(expression: int \| str) | Sets the number of poles for the machine. |
-| [set_topology](/docs/api/Machine/type/set_topology.md)(topology: str) | Sets the machine topology to `"Internal Rotor"` or `"External Rotor"`. |
+| [set_machine_type](/docs/api/Machine/type/set_machine_type)(machine_type: str) | Sets the machine type to `"IPMSM"`, `"SPMSM"`, or `"SynRM"`. |
+| [set_pole_number](/docs/api/Machine/type/set_pole_number)(expression: int \| str) | Sets the number of poles for the machine. |
+| [set_topology](/docs/api/Machine/type/set_topology)(topology: str) | Sets the machine topology to `"Internal Rotor"` or `"External Rotor"`. |
 | validate() | Returns the validation status in dictionary format. |
 
 ## Attributes
