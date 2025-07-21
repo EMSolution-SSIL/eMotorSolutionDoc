@@ -1,8 +1,0 @@
-{
-  "label": "PMSM Analysis",
-  "position": 9,
-  "link": {
-    "type": "generated-index",
-    "description": "For interior permanent magnet synchronous machines (IPMSMs), or surface-mounted permanent magnet synchronous machines (SPMSMs), the following analysis are available:"
-  }
-}

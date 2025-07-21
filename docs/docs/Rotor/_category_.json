@@ -1,8 +1,0 @@
-{
-  "label": "Rotor",
-  "position": 7,
-  "link": {
-    "type": "generated-index",
-    "description": "ロータマイルストーンには、「積層厚」のチェックポイントと、モータの種類に応じてロータ形状を規定する別のチェックポイントが含まれます。"
-  }
-}

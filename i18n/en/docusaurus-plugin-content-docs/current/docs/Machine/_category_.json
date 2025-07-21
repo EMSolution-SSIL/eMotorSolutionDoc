@@ -1,8 +1,0 @@
-{
-  "label": "Machine",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "The Machine milestone specifies the main properties of the machine, such as type, number of poles and main dimensions. It is comprised of two checkpoints: Type and Dimensions."
-  }
-}

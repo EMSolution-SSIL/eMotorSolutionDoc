@@ -14,7 +14,7 @@ It is recommended to generate a project file using the eMotorSolution GUI and th
 
 
 :::tip[Returns]
-- **Project**: An instance of the [`Project`](/docs/api/Project/index.md) class containing the loaded project data.
+- **Project**: An instance of the [`Project`](/docs/api/Project/) class containing the loaded project data.
 :::
     
 
