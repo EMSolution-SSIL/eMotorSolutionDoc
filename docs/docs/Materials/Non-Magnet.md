@@ -33,7 +33,7 @@ title: Non-magnet
     "_conductivity_unit": "S/m",
     "permeability_type": "linear",
     "permeability": {
-        "_realative_permeability_expression": "1.0"
+        "_relative_permeability_expression": "1.0"
     }
 }
 ```

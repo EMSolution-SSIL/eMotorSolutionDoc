@@ -10,7 +10,7 @@ It is an instance of the `MachineData` class, which contains two main attributes
 
 :::tip[Parameters]
 - **type**: [`MachineTypeData`](/docs/api/Machine/type/), The type data of the machine.
-- **dimension**: `MachineDimensionData`, The dimension data of the machine.
+- **dimension**: [`MachineDimensionData`](/docs/api/Machine/dimension/), The dimension data of the machine.
 :::
 
 ## Methods

@@ -32,7 +32,7 @@ The JSON format of the linear type of non-magnet material is as follows:
     "_conductivity_unit": "S/m",
     "permeability_type": "linear",
     "permeability": {
-        "_realative_permeability_expression": "1.0"
+        "_relative_permeability_expression": "1.0"
     }
 }
 ```
