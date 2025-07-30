@@ -23,5 +23,5 @@ It is an instance of the `StatorData` class, which can be accessed through `eMot
 | Attribute | Description |
 |---|---|
 | [slot](/docs/api/Stator/slot) | `SlotsData` An instance of the `SlotsData` class, which contains the slot geometry and other relevant information. |
-| winding | `StatorWindingData` An instance of the `StatorWindingData` class, which contains the winding configuration in the stator. |
+| [winding](/docs/api/Stator/winding/) | `StatorWindingData` An instance of the `StatorWindingData` class, which contains the winding configuration in the stator. |
 | lamination | `StatorLaminationsData` An instance of the `StatorLaminationsData` class that specifies the lamination properties of the stator. |

@@ -44,16 +44,17 @@ The following slot types are available:
 |--------|-------------|
 | set_slot_number(expression) | Sets the `expression: str \| int` for `slot_number`. |
 | set_slot_type(name) | Sets the `name: str` for `slot_type`. |
+| set_wedge_material(material_name) | Sets the `material_name: str` for `wedge_material`. It should be one of the non-magnet materials in the project's materials collection. |
 | validate() | Returns the validation status in dictionary format. |
 
 ## Attributes
 | Attribute | Description |
 |-----------|-------------|
 | slot_number | `int` The number of slots in the stator. :warning: *read-only* |
-| slot_type | `str` Set or get the name of the slot type. |
+| slot_type | `str` Returns the name of the slot type. :warning: *do not set this attribute directly. Use the `set_slot_type` method instead.* |
 | slot_props | The properties of the selected slot type. |
 | wedge | `bool` Set or get whether the stator slot has a wedge or not. |
-| wedge_material | `str` Set or get the name of the wedge material. It should be one of the non-magnet materials in the project's materials collection. |
+| wedge_material | `str` Returns the name of the wedge material. |
 
 ## Example Usages
 

@@ -27,7 +27,7 @@ It is an instance of the `MachineDimensionData` class accessible through the `eM
 | [set_stator_inner_radius](/docs/api/Machine/dimension/set_stator_inner_radius)(expression, unit) | Sets the inner radius of the stator. |
 | [set_rotor_outer_radius](/docs/api/Machine/dimension/set_rotor_outer_radius)(expression, unit) | Sets the outer radius of the rotor. |
 | [set_rotor_inner_radius](/docs/api/Machine/dimension/set_rotor_inner_radius)(expression, unit) | Sets the inner radius of the rotor. |
-| [set_shaft_material](/docs/api/Machine/dimension/set_shaft_material)(material) | Sets the material of the shaft. |
+| [set_shaft_material](/docs/api/Machine/dimension/set_shaft_material)(material_name) | Sets the material of the shaft. |
 | validate() | Returns the validation status in dictionary format. |
 
 ## Attributes
