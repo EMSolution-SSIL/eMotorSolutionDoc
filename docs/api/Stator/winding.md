@@ -4,7 +4,7 @@ title: "winding"
 ---
 # winding
 
-The `winding` attribute of the `Project.stator` corresponds to the [Stator Winding CheckPoint](/docs/docs/Stator/Winding) in the GUI. It is an instance of the `StatorWindingData` class, which can be accessed through `eMotorSolution.CheckPoints.Stator.Winding`.
+The `winding` attribute of the [`Project.stator`](/docs/api/Stator) corresponds to the [Stator Winding CheckPoint](/docs/docs/Stator/Winding) in the GUI. It is an instance of the `StatorWindingData` class, which can be accessed through `eMotorSolution.CheckPoints.Stator.Winding`.
 
 ::::::tip[Parameters]
 - **phase_number_expression**: `str | int` The mathematical expression string or integer representing the number of phases in the stator winding. Default is `3`.
