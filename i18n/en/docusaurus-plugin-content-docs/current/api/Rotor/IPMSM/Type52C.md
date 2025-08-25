@@ -1,0 +1,44 @@
+---
+sidebar_position: 4
+title: "Type 52C"
+---
+# Type 52C
+
+<p class="ems">![main window](../img/HoleM52C_mag_int_rotor.png)</p>
+
+The `IPM_HoleMagnet52CData` is accessed through the `eMotorSolution.CheckPoints.Rotor.IPMSM.IPM_HoleMagnet52C` module. 
+
+:::tip[Parameters]
+- **W0_expression**: `str | float` The string mathematical expression or a float value for `W0`.
+- **W0_unit**: `Literal["m", "dm", "cm", "mm", "in", "ft"]` The unit of the `W0`. Default is `"m"`.
+- **H0_expression**: `str | float` The string mathematical expression or a float value for `H0`.
+- **H0_unit**: `Literal["m", "dm", "cm", "mm", "in", "ft"]` The unit of the `H0`. Default is `"m"`.
+- **H1_expression**: `str | float` The string mathematical expression or a float value for `H1`.
+- **H1_unit**: `Literal["m", "dm", "cm", "mm", "in", "ft"]` The unit of the `H1`. Default is `"m"`.
+- **R0_expression**: `str | float` The string mathematical expression or a float value for `R0`.
+- **R0_unit**: `Literal["m", "dm", "cm", "mm", "in", "ft"]` The unit of the `R0`. Default is `"m"`.
+- **hole_material_init**: `str` The name of the hole material. It should be one of the non-magnet materials in the project's materials collection. Default is `Air`.
+- **magnet_material_init**: `str` The name of the magnet material. It should be one of the magnet materials in the project's materials collection. Default is `NdFeB`.
+:::
+
+## Methods
+| Method | Description |
+|--------|-------------|
+| set_W0(expression, unit) | Sets the `expression: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]` for `W0`. |
+| set_H0(expression, unit) | Sets the `expression: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]` for `H0`. |
+| set_H1(expression, unit) | Sets the `expression: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]` for `H1`. |
+| set_R0(expression, unit) | Sets the `expression: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]` for `R0`. |
+| set_hole_material(material_name) | Sets the `material_name: str` for `hole_material`. It should be one of the non-magnet materials in the project's materials collection. |
+| set_magnet_material(material_name) | Sets the `material_name: str` for `magnet_material`. It should be one of the magnet materials in the project's materials collection. |
+| validate() | Returns the validation status in dictionary format. |
+
+## Attributes
+| Attribute | Description |
+|---|---|
+| W0 | `float` Returns the evaluated value of `W0` in `m`. :warning: *read-only* |
+| H0 | `float` Returns the evaluated value of `H0` in `m`. :warning: *read-only* |
+| H1 | `float` Returns the evaluated value of `H1` in `m`. :warning: *read-only* |
+| R0 | `float` Returns the evaluated value of `R0` in `m`. :warning: *read-only* |
+| hole_material | `str` Returns the name of the hole material. :warning: *read-only* |
+| magnet_material | `str` Returns the name of the magnet material. :warning: *read-only* |
+| hints | `dict[str, float]` Returns the hints for the slot in `m`. :warning: *read-only* |
