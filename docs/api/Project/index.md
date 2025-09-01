@@ -28,6 +28,8 @@ The `Project` class is inherited from the [dataclasses](https://docs.python.org/
 | [`materials`](/docs/api/Materials) | `MaterialsData` Controlling the materials used in the project. |
 | [`stator`](/docs/api/Stator) | `StatorData` The stator data of the project, including slots, winding, and lamination. |
 | [`rotor`](/docs/api/Rotor) | `RotorData` The rotor data of the project, including holes, magnets, and lamination. |
+| [`mesh`](/docs/api/Mesh) | `MeshData` The mesh data of the project, including mesh size and refinement. |
+| [`analyses`](/docs/api/Analyses) | `AnalysesData` The analyses collection. |
 
 ## Example Usage
 ```python
