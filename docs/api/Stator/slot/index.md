@@ -27,6 +27,7 @@ The following slot types are available:
 * [Type233](/docs/api/Stator/slot/Type233)
 * [Type234](/docs/api/Stator/slot/Type234)
 * [Type251](/docs/api/Stator/slot/Type251)
+* [Type252](/docs/api/Stator/slot/Type252)
 * [Type261](/docs/api/Stator/slot/Type261)
 * [Type271](/docs/api/Stator/slot/Type271)
 * [Type301](/docs/api/Stator/slot/Type301)

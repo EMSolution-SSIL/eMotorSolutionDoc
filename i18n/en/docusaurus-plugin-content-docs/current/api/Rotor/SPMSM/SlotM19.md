@@ -14,6 +14,8 @@ The **Halbach Array** data class, `SPM_SlotM19Data`, is accessed through the `eM
 - **W0_unit**: `Literal["deg", "rad"]` The unit of the `W0`. Default is `"deg"`.
 - **H0_expression**: `str | float` The string mathematical expression or a float value for `H0`.
 - **H0_unit**: `Literal["m", "dm", "cm", "mm", "in", "ft"]` The unit of the `H0`. Default is `"m"`.
+- **H1_expression**: `str | float` The string mathematical expression or a float value for `H1`.
+- **H1_unit**: `Literal["m", "dm", "cm", "mm", "in", "ft"]` The unit of the `H0`. Default is `"m"`.
 :::
 
 ## Methods
@@ -21,6 +23,7 @@ The **Halbach Array** data class, `SPM_SlotM19Data`, is accessed through the `eM
 |--------|-------------|
 | set_W0(expression, unit) | Sets the `expression: str \| float` and `unit: Literal["deg", "rad"]` for `W0`. |
 | set_H0(expression, unit) | Sets the `expression: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]` for `H0`. |
+| set_H1(expression, unit) | Sets the `expression: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]` for `H1`. |
 | validate() | Returns the validation status in dictionary format. |
 
 ## Attributes
@@ -28,4 +31,5 @@ The **Halbach Array** data class, `SPM_SlotM19Data`, is accessed through the `eM
 |---|---|
 | W0 | `float` Returns the evaluated value of `W0` in `deg`. :warning: *read-only* |
 | H0 | `float` Returns the evaluated value of `H0` in `m`. :warning: *read-only* |
+| H1 | `float` Returns the evaluated value of `H1` in `m`. :warning: *read-only* |
 | hints | `dict[str, float]` Returns the hints for the slot in `m`. :warning: *read-only* |

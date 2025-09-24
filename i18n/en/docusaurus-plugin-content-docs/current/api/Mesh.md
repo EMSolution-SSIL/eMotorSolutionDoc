@@ -56,24 +56,24 @@ The `mesh` attribute of [`Project`](/docs/api/Project) instance, corresponds to 
 |--------|-------------|
 | set_algorithm(type) | Sets the mesh algorithm `type: Literal["MeshAdapt", "Automatic", "Initial mesh only", "Delaunay", "Frontal-Delaunay", "BAMG", "Frontal-Delaunay for Quads", "Packing of Parallelograms", "Quasi-structured Quad"]`. |
 | set_recombination_algorithm(type) | Sets the recombination algorithm `type: Literal[ "simple", "blossom", "simple full-quad", "blossom full-quad"]`. |
-| set_max_element_size(value, unit) | Sets the maximum element size with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_tangential_divisions(value) | Sets the tangential divisions with `value: str | int`. |
-| set_radial_divisions(value) | Sets the radial divisions with `value: str | int`. |
-| set_stator_core_dist_min(value, unit) | Sets the minimum stator core distance with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_stator_core_dist_max(value, unit) | Sets the maximum stator core distance with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_stator_core_size_min(value, unit) | Sets the minimum stator core size with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_stator_core_size_max(value, unit) | Sets the maximum stator core size with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_stator_windings(value, unit) | Sets the stator windings with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_stator_wedge(value, unit) | Sets the stator wedge with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_stator_shaft(value, unit) | Sets the stator shaft with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_rotor_core_dist_min(value, unit) | Sets the minimum rotor core distance with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_rotor_core_dist_max(value, unit) | Sets the maximum rotor core distance with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_rotor_core_size_min(value, unit) | Sets the minimum rotor core size with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_rotor_core_size_max(value, unit) | Sets the maximum rotor core size with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_rotor_magnets(value, unit) | Sets the rotor magnets with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_rotor_holes(value, unit) | Sets the rotor holes with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_rotor_shaft(value, unit) | Sets the rotor shaft with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
-| set_rotor_surface_layer(value, unit) | Sets the rotor surface layer with `value: str | float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_max_element_size(value, unit) | Sets the maximum element size with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_tangential_divisions(value) | Sets the tangential divisions with `value: str \| int`. |
+| set_radial_divisions(value) | Sets the radial divisions with `value: str \| int`. |
+| set_stator_core_dist_min(value, unit) | Sets the minimum stator core distance with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_stator_core_dist_max(value, unit) | Sets the maximum stator core distance with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_stator_core_size_min(value, unit) | Sets the minimum stator core size with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_stator_core_size_max(value, unit) | Sets the maximum stator core size with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_stator_windings(value, unit) | Sets the stator windings with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_stator_wedge(value, unit) | Sets the stator wedge with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_stator_shaft(value, unit) | Sets the stator shaft with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_rotor_core_dist_min(value, unit) | Sets the minimum rotor core distance with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_rotor_core_dist_max(value, unit) | Sets the maximum rotor core distance with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_rotor_core_size_min(value, unit) | Sets the minimum rotor core size with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_rotor_core_size_max(value, unit) | Sets the maximum rotor core size with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_rotor_magnets(value, unit) | Sets the rotor magnets with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_rotor_holes(value, unit) | Sets the rotor holes with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_rotor_shaft(value, unit) | Sets the rotor shaft with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
+| set_rotor_surface_layer(value, unit) | Sets the rotor surface layer with `value: str \| float` and `unit: Literal["m", "dm", "cm", "mm", "in", "ft"]`. |
 | set_hints() | Sets the hints . |
 | run(gmsh_path) | `str` Runs the mesh generation using the specified GMSH path. |
 | show() | Displays the generated mesh. |
