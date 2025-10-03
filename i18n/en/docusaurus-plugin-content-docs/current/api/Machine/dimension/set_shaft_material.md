@@ -13,7 +13,7 @@ This method assigns a new material to the shaft. The material must be a not-magn
 
 # Example Usage
 ```python
-import emotorsolution as ems
+import eMotorSolution as ems
 
 # Load an existing project
 project = ems.load_machine("path/to/your/project.json")

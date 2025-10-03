@@ -31,7 +31,7 @@ Project.show(
 Here is an example of how to load a project and access its parameters:
 
 ```python
-import emotorsolution as ems
+import eMotorSolution as ems
 
 # Load an existing project
 project = ems.load_project("path/to/your/project.json")

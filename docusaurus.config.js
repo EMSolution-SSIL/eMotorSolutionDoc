@@ -119,13 +119,13 @@ const config = {
             position: 'left',
             label: 'API',
           },
-          {
-            type: 'docSidebar',
-            sidebarId: 'showcasesSidebar',
-            position: 'left',
-            label: 'Showcases',
-          },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          // {
+          //   type: 'docSidebar',
+          //   sidebarId: 'showcasesSidebar',
+          //   position: 'left',
+          //   label: 'Showcases',
+          // },
+          // { to: '/blog', label: 'Blog', position: 'left' },
           {
             type: 'localeDropdown',
             position: 'right',

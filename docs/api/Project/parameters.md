@@ -42,7 +42,7 @@ Project.parameters : dict[str, object]
 In the following example, we demonstrate how to add a new parameter to the project, assign it to the stator's outer diameter, reassign a new value to it, and draw the machine geometry in both cases.
 
 ```python
-import emotorsolution as ems
+import eMotorSolution as ems
 from matplotlib import pyplot as plt
 
 # Load an existing project

@@ -19,7 +19,7 @@ The `air_gap_length` attribute is implemented as a Python property and cannot be
 ## Example Usage
 Here is an example of how to access the `air_gap_length` attribute after loading a machine:
 ```python
-import emotorsolution as ems
+import eMotorSolution as ems
 
 # Load an existing project
 project = ems.load_project("path/to/your/project.json")

@@ -13,7 +13,7 @@ Set the rotor position for the machine to be either internal or external using t
 
 ## Example Usage
 ```python
-import emotorsolution as ems
+import eMotorSolution as ems
 
 # Load an existing project
 project = ems.load_project("path/to/your/project.json")

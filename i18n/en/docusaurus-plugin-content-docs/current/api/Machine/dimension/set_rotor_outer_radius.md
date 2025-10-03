@@ -14,7 +14,7 @@ This method assigns a new value to the outer radius of the rotor with respect to
 
 # Example Usage
 ```python
-import emotorsolution as ems
+import eMotorSolution as ems
 
 # Load an existing project
 project = ems.load_machine("path/to/your/machine.json")

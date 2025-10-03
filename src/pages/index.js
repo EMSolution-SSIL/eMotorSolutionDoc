@@ -16,13 +16,27 @@ function HomepageHeader() {
       <div className="container">
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
+        <span className={styles.version_badge}>
+          v0.6.1
+        </span>
         </Heading>
         <p className="hero__subtitle">
           <Translate
             id="homepage.eMotorSolution.description">
-
           </Translate>
         </p>
+        <div className={styles.buttons}>
+          <Link
+            className={`button button--lg ${styles.xbutton}`}
+            to="docs/docs/installation">
+              Docs
+          </Link>
+          <Link
+            className={`button button--lg ${styles.xbutton}`}
+            to="docs/api/installation">
+              API
+          </Link>
+        </div>
       </div>
     </header>
   );

@@ -33,7 +33,7 @@ The `Project` class is inherited from the [dataclasses](https://docs.python.org/
 
 ## Example Usage
 ```python
-import emotorsolution as ems
+import eMotorSolution as ems
 
 # load an existing project
 project = ems.load_project("path/to/your/project.json")

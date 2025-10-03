@@ -22,7 +22,7 @@ It is recommended to generate a project file using the eMotorSolution GUI and th
 Here is an example of how to load a project and access its parameters:
 
 ```python
-import emotorsolution as ems
+import eMotorSolution as ems
 
 # Load an existing project
 project = ems.load_project("path/to/your/project.json")

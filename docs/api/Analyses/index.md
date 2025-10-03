@@ -23,7 +23,7 @@ The `analyses` attribute of the [`Project`](/docs/api/Project/) class correspond
 ## Example Usage
 ### 1. Print the analyses collection of a project
 ```python
-import emotorsolution as ems
+import eMotorSolution as ems
 
 # load an existing project
 project = ems.load_project("path/to/your/project.json")
@@ -39,7 +39,7 @@ Although it is possible to add or remove analyses from the `analyses` attribute,
 In future versions of the API, more robust methods for managing analyses may be introduced.
 :::
 ```python
-import emotorsolution as ems
+import eMotorSolution as ems
 from eMotorSolution.CheckPoints.Analysis.PMSM.Back_EMF.PMSM_Back_EMF import PMSM_Back_EMF
 
 # load an existing project

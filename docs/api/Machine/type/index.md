@@ -35,7 +35,7 @@ It is an instance of the `MachineTypeData` class accessible through the `eMotorS
 Here is an example of how to access and modify some of the attributes and methods of the `MachineTypeData` class:
 
 ```python
-import emotorsolution as ems
+import eMotorSolution as ems
 
 # Load an existing project
 project = ems.load_project("path/to/your/project.json")

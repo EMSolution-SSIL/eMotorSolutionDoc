@@ -13,7 +13,7 @@ Set the number of poles for the machine using the `set_pole_number` method of th
 
 ## Example Usage
 ```python
-import emotorsolution as ems
+import eMotorSolution as ems
 
 # Load an existing project
 project = ems.load_project("path/to/your/project.json")
