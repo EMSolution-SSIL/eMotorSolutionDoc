@@ -11,6 +11,8 @@ To add a new non-magnet material, you can right-click on the `Materials` milesto
 Each material can be validated, renamed, exported, and removed by right-clicking on the material in the `Materials` milestone. The `Validate` option will check if the material properties are valid and will display a message if there are any errors. The `Rename` option allows you to change the name of the material if it was not set to anything. The `Export` option will export the material properties in JSON format, which can be used to import the material into another project. The `Remove` option will delete the material from the project.
 <p align="center">![validationg](./img/options.png)</p>
 
+## Permeability Types
+
 There are three types of non-magnet materials:
 - **Linear**: This is the default type of non-magnet material. It has a constant permeability and conductivity.
 - **Nonlinear**: This type of non-magnet material has a non-linear permeability but a constant conductivity.
@@ -116,3 +118,23 @@ The JSON format is as follows:
     }
 }
 ```
+
+## Iron Losses
+
+Two types of iron losses can be defined for non-magnet materials:
+- **Yamazaki**: This type of iron loss is based on the Yamazaki model. The properties of the Yamazaki iron loss are defined by the following parameters:
+  - **Ke**: The coefficient of the eddy current loss.
+  - **Kh**: The coefficient of the hysteresis loss.
+  - **Mass Density**: The mass density of the material.
+
+<p align="center">![validationg](./img/Yamazaki.png)</p>
+
+- **Anisotropic Yamazaki**: This type of iron loss is based on the anisotropic Yamazaki model. The properties of the anisotropic Yamazaki iron loss are defined by the following parameters:
+  - **Ke X**: The coefficient of the eddy current loss in the X direction.
+  - **Kh X**: The coefficient of the hysteresis loss in the X direction.
+  - **Ke Y**: The coefficient of the eddy current loss in the Y direction.
+  - **Kh Y**: The coefficient of the hysteresis loss in the Y direction.
+  - **Kh Z**: The coefficient of the hysteresis loss in the Z direction.
+  - **Mass Density**: The mass density of the material.
+
+<p align="center">![validationg](./img/AnisoYamazaki.png)</p>
