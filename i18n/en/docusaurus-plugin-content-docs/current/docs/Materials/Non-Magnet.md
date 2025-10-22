@@ -35,7 +35,8 @@ The JSON format of the linear type of non-magnet material is as follows:
     "permeability_type": "linear",
     "permeability": {
         "_relative_permeability_expression": "1.0"
-    }
+    },
+    "iron_loss": null
 }
 ```
 
@@ -72,7 +73,8 @@ The JSON format is as follows:
                 1.5
             ]
         ]
-    }
+    },
+    "iron_loss": null
 }
 ```
 
@@ -115,7 +117,31 @@ The JSON format is as follows:
                 1.0
             ]
         ]
-    }
+    },
+    "iron_loss": null
+}
+```
+
+### Protected Nonlinear Types
+The BH curve data for nonlinear and anisotropic nonlinear non-magnet materials can be protected to prevent unauthorized access or modification. Although the data isencrypted, the material can still be used in simulations without any issues. 
+
+<p align="center">![validationg](./img/protected.png)</p>
+
+The json format for protected nonlinear non-magnet materials is as follows:
+
+```json
+{
+    "type": "non_magnet",
+    "name": "ProtectedMaterial",
+    "_conductivity_expression": "1e6",
+    "_conductivity_unit": "S/m",
+    "permeability_type": "encrypted nonlinear",
+    "permeability": {
+        "_b_unit": "T",
+        "_h_unit": "A/m",
+        "_encrypted_data": "JsOlfnjLEIaLhEao7zsh+ifwryc4joLXBlqaQjo2XHQrbUSx2qUYAot16WP11hU13CgRNm0QgReZNZpJ/9JOeg9WdP6Ot7CPU/f0rGHuWgaz1KBfoT9wI8pKN7ZsZiZB"
+    },
+    "iron_loss": null
 }
 ```
 
@@ -129,6 +155,44 @@ Two types of iron losses can be defined for non-magnet materials:
 
 <p align="center">![validationg](./img/Yamazaki.png)</p>
 
+JSON format is as follows:
+```json
+{
+    "type": "non_magnet",
+    "name": "Steel",
+    "_conductivity_expression": "0.0",
+    "_conductivity_unit": "S/m",
+    "permeability_type": "nonlinear",
+    "permeability": {
+        "b_unit": "T",
+        "h_unit": "A/m",
+        "data": [
+            [
+                0.0,
+                0.0
+            ],
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.5
+            ]
+        ]
+    },
+    "iron_loss": {
+        "type": "yamazaki",
+        "_ke_expression": "2.923e-4",
+        "_ke_unit": "W/kg/T^2/Hz^2",
+        "_kh_expression": "6.012e-2",
+        "_kh_unit": "W/kg/T^2/Hz",
+        "_mass_density_expression": "7850",
+        "_mass_density_unit": "kg/m^3"
+    }
+}
+```
+
 - **Anisotropic Yamazaki**: This type of iron loss is based on the anisotropic Yamazaki model. The properties of the anisotropic Yamazaki iron loss are defined by the following parameters:
   - **Ke X**: The coefficient of the eddy current loss in the X direction.
   - **Kh X**: The coefficient of the hysteresis loss in the X direction.
@@ -138,3 +202,47 @@ Two types of iron losses can be defined for non-magnet materials:
   - **Mass Density**: The mass density of the material.
 
 <p align="center">![validationg](./img/AnisoYamazaki.png)</p>
+
+JSON format is as follows:
+```json
+{
+    "type": "non_magnet",
+    "name": "Steel",
+    "_conductivity_expression": "0.0",
+    "_conductivity_unit": "S/m",
+    "permeability_type": "nonlinear",
+    "permeability": {
+        "b_unit": "T",
+        "h_unit": "A/m",
+        "data": [
+            [
+                0.0,
+                0.0
+            ],
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.5
+            ]
+        ]
+    },
+    "iron_loss": {
+        "type": "anisotropic_yamazaki",
+        "_ke_x_expression": "2.923e-4",
+        "_ke_x_unit": "W/kg/T^2/Hz^2",
+        "_ke_y_expression": "6.012e-2",
+        "_ke_y_unit": "W/kg/T^2/Hz",
+        "_kh_x_expression": "1.411e-4",
+        "_kh_x_unit": "W/kg/T^2/Hz^2",
+        "_kh_y_expression": "6.012e-2",
+        "_kh_y_unit": "W/kg/T^2/Hz",
+        "_kh_z_expression": "3.006e-2",
+        "_kh_z_unit": "W/kg/T^2/Hz",
+        "_mass_density_expression": "7850",
+        "_mass_density_unit": "kg/m^3"
+    }
+}
+```

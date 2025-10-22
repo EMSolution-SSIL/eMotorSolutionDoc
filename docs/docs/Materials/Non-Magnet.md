@@ -35,7 +35,8 @@ title: Non-magnet
     "permeability_type": "linear",
     "permeability": {
         "_relative_permeability_expression": "1.0"
-    }
+    },
+    "iron_loss": null
 }
 ```
 
@@ -72,7 +73,30 @@ JSON 形式は次のとおりです：
                 1.5
             ]
         ]
-    }
+    },
+    "iron_loss": null
+}
+```
+
+### 保護された非線形タイプ (Protected Nonlinear Types)
+非線形および異方性非線形の非磁石材料の B-H カーブデータは、不正なアクセスや改ざんを防ぐために保護できます。データは暗号化されていますが、材料はシミュレーションで問題なく使用できます。
+
+<p align="center">![validationg](./img/protected.png)</p>
+
+保護された非線形非磁石材料の JSON 形式は次のとおりです：
+```json
+{
+    "type": "non_magnet",
+    "name": "ProtectedMaterial",
+    "_conductivity_expression": "1e6",
+    "_conductivity_unit": "S/m",
+    "permeability_type": "encrypted nonlinear",
+    "permeability": {
+        "_b_unit": "T",
+        "_h_unit": "A/m",
+        "_encrypted_data": "JsOlfnjLEIaLhEao7zsh+ifwryc4joLXBlqaQjo2XHQrbUSx2qUYAot16WP11hU13CgRNm0QgReZNZpJ/9JOeg9WdP6Ot7CPU/f0rGHuWgaz1KBfoT9wI8pKN7ZsZiZB"
+    },
+    "iron_loss": null
 }
 ```
 
@@ -115,7 +139,8 @@ JSON 形式は次のとおりです：
                 1.0
             ]
         ]
-    }
+    },
+    "iron_loss": null
 }
 ```
 
@@ -129,6 +154,44 @@ JSON 形式は次のとおりです：
 
 <p align="center">![validationg](./img/Yamazaki.png)</p>
 
+JSON 形式は次のとおりです：
+```json
+{
+    "type": "non_magnet",
+    "name": "Steel",
+    "_conductivity_expression": "0.0",
+    "_conductivity_unit": "S/m",
+    "permeability_type": "nonlinear",
+    "permeability": {
+        "b_unit": "T",
+        "h_unit": "A/m",
+        "data": [
+            [
+                0.0,
+                0.0
+            ],
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.5
+            ]
+        ]
+    },
+    "iron_loss": {
+        "type": "yamazaki",
+        "_ke_expression": "2.923e-4",
+        "_ke_unit": "W/kg/T^2/Hz^2",
+        "_kh_expression": "6.012e-2",
+        "_kh_unit": "W/kg/T^2/Hz",
+        "_mass_density_expression": "7850",
+        "_mass_density_unit": "kg/m^3"
+    }
+}
+```
+
 - **異方性山崎モデル (Anisotropic Yamazaki)**: この鉄損失タイプは異方性山崎モデルに基づいています。異方性山崎鉄損失の特性は、以下のパラメータで定義されます：
     - **Ke X**: X方向の渦電流損失係数。
     - **Kh X**: X方向のヒステリシス損失係数。
@@ -138,3 +201,47 @@ JSON 形式は次のとおりです：
     - **質量密度 (Mass Density)**: 材料の質量密度。
 
 <p align="center">![validationg](./img/AnisoYamazaki.png)</p>
+
+JSON 形式は次のとおりです：
+```json
+{
+    "type": "non_magnet",
+    "name": "Steel",
+    "_conductivity_expression": "0.0",
+    "_conductivity_unit": "S/m",
+    "permeability_type": "nonlinear",
+    "permeability": {
+        "b_unit": "T",
+        "h_unit": "A/m",
+        "data": [
+            [
+                0.0,
+                0.0
+            ],
+            [
+                1.0,
+                1.0
+            ],
+            [
+                2.0,
+                1.5
+            ]
+        ]
+    },
+    "iron_loss": {
+        "type": "anisotropic_yamazaki",
+        "_ke_x_expression": "2.923e-4",
+        "_ke_x_unit": "W/kg/T^2/Hz^2",
+        "_ke_y_expression": "6.012e-2",
+        "_ke_y_unit": "W/kg/T^2/Hz",
+        "_kh_x_expression": "1.411e-4",
+        "_kh_x_unit": "W/kg/T^2/Hz^2",
+        "_kh_y_expression": "6.012e-2",
+        "_kh_y_unit": "W/kg/T^2/Hz",
+        "_kh_z_expression": "3.006e-2",
+        "_kh_z_unit": "W/kg/T^2/Hz",
+        "_mass_density_expression": "7850",
+        "_mass_density_unit": "kg/m^3"
+    }
+}
+```

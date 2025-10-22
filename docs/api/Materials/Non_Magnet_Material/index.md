@@ -10,7 +10,7 @@ The `Non_Magnet_Material` class represents the API of the non-magnet material in
 - **name**: `str` - The name of the non-magnet material.
 - **conductivity_expression**: `str | float` - The conductivity of the material, which can be a string mathematical expression or a float value.
 - **conductivity_unit**: `Literal["S/m", "S/cm", "S/mm", "S/um", "S/nm"]` - The unit of conductivity. Default is `"S/m"`.
-- **permeability**: `Union[LinearPermeability, NonlinearPermeability, AnisotropicPermeability]` - The permeability of the material, which can be an instance of [`LinearPermeability`](/docs/api/Materials/Non_Magnet_Material/LinearPermeability), [`NonlinearPermeability`](/docs/api/Materials/Non_Magnet_Material/NonlinearPermeability), or [`AnisotropicPermeability`](/docs/api/Materials/Non_Magnet_Material/AnisotropicPermeability).
+- **permeability**: `Union[LinearPermeability, NonlinearPermeability, AnisotropicPermeability]` - The permeability of the material, which can be an instance of [`LinearPermeability`](/docs/api/Materials/Non_Magnet_Material/LinearPermeability), [`NonlinearPermeability`](/docs/api/Materials/Non_Magnet_Material/NonlinearPermeability), [`ProtectedNonlinearPermeability`](/docs/api/Materials/Non_Magnet_Material/ProtectedNonlinearPermeability), [`AnisotropicPermeability`](/docs/api/Materials/Non_Magnet_Material/AnisotropicPermeability), or [`ProtectedAnisotropicPermeability`](/docs/api/Materials/Non_Magnet_Material/ProtectedAnisotropicPermeability).
 - **iron_loss**: `Optional[Union[YamazakiLoss, AnisotropicYamazakiLoss]]` - The iron loss model for the material, which can be an instance of [`YamazakiLoss`](/docs/api/Materials/Non_Magnet_Material/YamazakiLoss) or [`AnisotropicYamazakiLoss`](/docs/api/Materials/Non_Magnet_Material/AnisotropicYamazakiLoss).
 :::
 
@@ -32,7 +32,7 @@ The `Non_Magnet_Material` class represents the API of the non-magnet material in
 | name | `str` The name of the non-magnet material. |
 | conductivity | `float` Returns the evaluated conductivity of the material in `S/m`. :warning: *read-only* |
 | permeability_type | `Literal["Linear", "Nonlinear", "Anisotropic"]` Returns the type of permeability of the material. :warning: *read-only* |
-| permeability | `Union[LinearPermeability, NonlinearPermeability, AnisotropicPermeability]` Returns the permeability of the material. :warning: *read-only* |
+| permeability | `Union[LinearPermeability, NonlinearPermeability, AnisotropicPermeability, ProtectedNonlinearPermeability, ProtectedAnisotropicPermeability]` Returns the permeability of the material. :warning: *read-only* |
 
 ## Example Usage
 

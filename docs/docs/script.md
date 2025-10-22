@@ -73,6 +73,9 @@ pprint({"key": "value"})
 ```python
 import ems
 from time import sleep
+
+par = 10
+ems.update_parameters({"par": par})
 for i in range(5):
     par += 1
     ems.update_parameters({"par": par})
