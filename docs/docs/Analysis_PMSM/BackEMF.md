@@ -43,7 +43,7 @@ title: Back EMF
 モータ解析では、通常、回転数と極数に基づいて時間ステップとステップ数を設定します。例えば、回転数N*rpm*、極数pの場合、1電気周期の時間はT=(p/2)*(N\/60)=pN\/120であり、これに基づいて `Delta Time` と `Number of Steps` を決定します。
 :::
 
-<p class="ems">![add](./img/back_emf_settings.png)</p>
+<p class="ems">![add](./img/backemf_options.png)</p>
 
 ## 解析の実行
 
@@ -59,7 +59,7 @@ title: Back EMF
 
 メッシュファイルを変更した場合は、既存のメッシュファイルを削除することを推奨します。これにより、最新のメッシュファイルを用いた解析が確実に行われます。削除するには、プロジェクトツリー内の解析チェックポイントを右クリックし、`Purge > Purge All` を選択します。
 
-<p class="ems">![add](./img/back_emf_options.png)</p>
+<p class="ems">![add](./img/backemf_options.png)</p>
 
 また、`Purge > Purge Solutions` オプションを使用すると、メッシュファイルを削除せずに、すべての解ファイル（ソリューションファイル）のみを削除できます。これは、メッシュファイルを保持したまま古い解析結果を削除してディスク容量を確保したい場合に有効です。
 
