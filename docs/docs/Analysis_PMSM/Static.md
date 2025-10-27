@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Transient
+title: Static
 ---
 # 静磁界解析テスト
 
