@@ -44,15 +44,15 @@ title: Transient
     - `R`、`L`、`C`は各素子の値を直接入力します。単位はそれぞれ`Ω`、`H`、`F`です。
 
 ## 時間関数の設定
-**Time Evolutions**は解析内で用いる時間関数を設定します。例えば、**Network Editor**で設定した`CPS`などが対象です。デフォルトで**Network Editor**の`CPS`の*U*、*V*、*W*相に相当するID 1～3が用意されています。テーブルで対象のIDをクリックすると、時間関数を編集できます。`Type`から関数の設定方法を選択します：
+**Time Evolutions**は解析内で用いる時間関数を設定します。例えば、**Network Editor**で設定した`CPS`などが対象です。デフォルトで**Network Editor**の`CPS`のU、V、W相に相当するID 1～3が用意されています。テーブルで対象のIDをクリックすると、時間関数を編集できます。`Type`から関数の設定方法を選択します：
 - `Described by Equation`は`Proparty`の値を入力して関数を定義します。入力テーブルの下に示された関数を参考に各`Proparty`に対応する値をテーブルで入力してください。
 - `Data Table`はテーブル形式で関数を定義します。`TIME_expression`に時間データ、`VALUE_expression`に値データを入力します。
-- `Harmonic Time Evolution`は余弦関数（*cos*）の`AMPLITUDE`（振幅）、`TCYCLE`（周期）、`PHASE`（位相）を入力します。
+- `Harmonic Time Evolution`は余弦関数（$\cos(\cdot)$）の`AMPLITUDE`（振幅）、`TCYCLE`（周期）、`PHASE`（位相）を入力します。
 
 :::info
 交流を通電する場合は`Harmonic Time Evolution`を推奨します。同期モータでは周期は回転数と一致している必要があります。
-回転数をN*rpm*、極数をpとしたとき、周期T*sec*は以下で求まります：
-T=(p/2)*(N\/60)=pN\/120
+回転数を$N$`rpm`、極数を$p$としたとき、周期$T$`sec`は以下で求まります：
+$T=\frac{p}{2}}\frac{N}{60}=\frac{pN}{120}$
 :::
 
 ## トランジェント解析の設定
@@ -66,8 +66,8 @@ T=(p/2)*(N\/60)=pN\/120
 :::info
 モータ解析では1ステップで機械角1度となるように時間刻み幅を決めるのが一般的です。
 この場合の`Delta time`は機械角での周期から360を割ることで求まります。
-回転数をN`rpm`とすると，時間刻み幅Δt`sec`は以下で求まります：
-Δt=60\/(360*N)=1\/(6*N)
+回転数を$N$`rpm`とすると，時間刻み幅$\Delta t$`sec`は以下で求まります：
+$\Delta t=\frac{60}{360N}=\frac{1}{6N}$
 :::
 
 <p class="ems">![add](./img/transient_settings.png)</p>

@@ -53,7 +53,7 @@ $L_q = \frac{\psi_q}{I_q}$
 `Delta Time`の値は機械角一度/１ステップとして設定され，`Number of Steps`の値は電気角120度分のステップ数として設定されます。
 
 :::info
-モータ解析では、通常、回転数と極数に基づいて時間ステップとステップ数を設定します。例えば、回転数N*rpm*、極数pの場合、1電気周期の時間はT=(p/2)*(N\/60)=pN\/120であり、これに基づいて `Delta Time` と `Number of Steps` を決定します。
+モータ解析では、通常、回転数と極数に基づいて時間ステップとステップ数を設定します。例えば、回転数$N$`rpm`、極数$p$の場合、1電気周期の時間は$T=\frac{p}{2}\frac{N}{60}=\frac{pN}{120}であり、これに基づいて `Delta Time` と `Number of Steps` を決定します。
 :::
 
 <p class="ems">![add](./img/dq_analysis_settings.png)</p>

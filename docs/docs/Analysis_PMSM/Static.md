@@ -6,12 +6,12 @@ title: Static
 
 ## 解析の目的
 
-静磁界解析は、一ステップのみの解析を行える機能で、計算条件の確認や計算時間を把握するために用意されたものです。
+静磁界解析は、1ステップのみの解析を行える機能で、計算条件の確認や計算時間を把握するために用意されたものです。
 モータ特性を評価する場合，`Back EMF`や`DQ Analysis`、`Torque_vs_Current`解析を使用してください。
 
 ## Static の作成
 
-静磁界解析（静解析過渡解析）を追加するには、プロジェクトツリー内の `Analysis` マイルストーンを右クリックし、`Static` を選択します。これにより、`Analysis` マイルストーンの下にユニークな名前を持つ静磁界解析ノードが作成されます。プロジェクトディレクトリ内には指定された名前の新しいフォルダが作成され、EMSolution 用の入力制御ファイル（JSON形式）が生成されます。
+スタティック解析（静磁界解析）を追加するには、プロジェクトツリー内の `Analysis` マイルストーンを右クリックし、`Static` を選択します。これにより、`Analysis` マイルストーンの下にユニークな名前を持つ静磁界解析ノードが作成されます。プロジェクトディレクトリ内には指定された名前の新しいフォルダが作成され、EMSolution 用の入力制御ファイル（JSON形式）が生成されます。
 
 <p class="ems">![add](./img/add_pmsm_analysis.png)</p>
 
@@ -41,12 +41,12 @@ title: Static
 **Time Evolutions**は解析内で用いる時間関数を設定します。例えば、**Network Editor**で設定した`CPS`などが対象です。デフォルトで**Network Editor**の`CPS`の*U*、*V*、*W*相に相当するID 1～3が用意されています。テーブルで対象のIDをクリックすると、時間関数を編集できます。`Type`から関数の設定方法を選択します：
 - `Described by Equation`は`Proparty`の値を入力して関数を定義します。入力テーブルの下に示された関数を参考に各`Proparty`に対応する値をテーブルで入力してください。
 - `Data Table`はテーブル形式で関数を定義します。`TIME_expression`に時間データ、`VALUE_expression`に値データを入力します。
-- `Harmonic Time Evolution`は余弦関数（*cos*）の`AMPLITUDE`（振幅）、`TCYCLE`（周期）、`PHASE`（位相）を入力します。
+- `Harmonic Time Evolution`は余弦関数（$\cos(\cdot)$）の`AMPLITUDE`（振幅）、`TCYCLE`（周期）、`PHASE`（位相）を入力します。
 
 :::info
 交流を通電する場合は`Harmonic Time Evolution`を推奨します。同期モータでは周期は回転数と一致している必要があります。
-回転数をN*rpm*、極数をpとしたとき、周期T*sec*は以下で求まります：
-T=(p/2)*(N\/60)=pN\/120
+回転数を$N$`rpm`、極数を$p$としたとき、周期$T$`sec`は以下で求まります：
+$T=\frac{p}{2}}\frac{N}{60}=\frac{pN}{120}$
 :::
 
 ## 静磁界解析の設定
