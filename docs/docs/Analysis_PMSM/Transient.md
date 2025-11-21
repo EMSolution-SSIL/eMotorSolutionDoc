@@ -52,7 +52,7 @@ title: Transient
 :::info
 交流を通電する場合は`Harmonic Time Evolution`を推奨します。同期モータでは周期は回転数と一致している必要があります。
 回転数を$N$`rpm`、極数を$p$としたとき、周期$T$`sec`は以下で求まります：
-$T=\frac{p}{2}}\frac{N}{60}=\frac{pN}{120}$
+$T=\frac{p}{2}\frac{N}{60}=\frac{pN}{120}$
 :::
 
 ## トランジェント解析の設定
