@@ -124,3 +124,14 @@ project.mesh.run("path/to/gmsh.exe")
 
 project.mesh.show()
 ```
+
+## Imported GEO and external mesh sources
+
+`MeshData.imported_source_settings` exposes the active `ImportedSourceSettings` data. Profiles are created with
+`eMotorSolution.CheckPoints.Mesh.ImportedSources.import_profile()` and registered with
+`add_imported_profile(profile, activate=True)`.
+
+Important members include `set_active_imported_profile()`, `set_source_mode()`, `refresh_imported_source_settings()`,
+`resolved_geo_script()`, `resolved_analysis_mesh_path()`, `validate_mesh_generation_sources()`, and
+`validate_analysis_mesh_sources()`. Imported GEO and Imported Mesh are mutually exclusive; external mesh mode rejects
+mesh generation and validates Gmsh 4.1 ASCII files and their physical groups.

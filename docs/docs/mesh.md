@@ -94,3 +94,18 @@ title: Mesh
 ### メッシュ概要レポート（Report Mesh Summary）
 
 このボタンを押すと、メッシュ概要がログパネルに出力されます。
+
+## v0.7.0: GEO・外部メッシュの入力元
+
+Meshチェックポイントでは、通常の`Base`モデルに加えて、EMSOptimizerが更新した`Imported GEO`または
+外部メッシュの`Imported Mesh`を入力元として選択できます。
+
+| Source Mode | 内容 | メッシュ生成 |
+| --- | --- | --- |
+| `Base` | 現在のeMotorSolutionモデルから生成 | 可能 |
+| `Imported GEO` | 登録したGEOを優先し、未指定部分はBase GEOを使用 | 可能 |
+| `Imported Mesh` | ステータ／ロータの外部メッシュを使用 | 不可 |
+
+Imported GEOとImported Meshは同時に有効にできません。プロファイルが`ready`であること、GEO／Mesh Statusと
+ファイル名が有効であることを確認してください。外部メッシュはGmsh 4.1 ASCII形式と必要なPhysicalNamesを
+満たす必要があります。プロジェクトを配布する場合は、`ImportedGeometry`／`ImportedMesh`のコピーも含めます。

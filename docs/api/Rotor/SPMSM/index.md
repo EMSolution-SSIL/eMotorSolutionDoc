@@ -62,3 +62,8 @@ halbach_array.set_W0(20)
 project.show()
 ```
 
+## DXF-assisted User Defined Slot-Magnet
+
+The SPMSM User Defined editor accepts DXF reference points and curves and maps them to the normalized
+`Points`, `Connections`, and `Magnetization` model. Match `Unit` to the drawing units and validate the closed magnet
+region before saving. Incomplete editing can be kept with `Save Draft`.

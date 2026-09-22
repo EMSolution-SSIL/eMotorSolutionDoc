@@ -78,3 +78,8 @@ print(hints)
 project.show()
 ```
 
+## DXF-assisted User Defined Hole-Magnet
+
+The IPMSM User Defined editor accepts DXF reference points and curves. Selected geometry is normalized into the
+`Points`, `Connections`, and `Magnetization` model. Shared endpoints and arc centers are reused, an X-axis intersection
+helper is available, and `Save Draft` preserves incomplete editing before formal validation.

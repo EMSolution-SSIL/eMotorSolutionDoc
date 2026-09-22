@@ -10,3 +10,4 @@ For Permanent Magnet Synchronous Machines (PMSM), whether they are surface-mount
 | [`PMSM_Back_EMF`](/docs/api/Analyses/PMSM/PMSM_Back_EMF) | Calculates the back electromotive force (EMF) of the PMSM based on its design and operating conditions. |
 | [`PMSM_Transient`](/docs/api/Analyses/PMSM/PMSM_Transient) | Calculates the transient response of the PMSM based on initial conditions and operating parameters. |
 | [`PMSM_Static`](/docs/api/Analyses/PMSM/PMSM_Static) | Calculates the static response of the PMSM based on initial conditions and operating parameters. |
+| [`PMSM_Efficiency_Map`](/docs/api/Analyses/PMSM/PMSM_Efficiency_Map) | Calculates efficiency and performance maps and evaluates Motor ROM operating points. |

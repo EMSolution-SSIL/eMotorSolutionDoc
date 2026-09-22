@@ -193,3 +193,9 @@ ems.update_parameters(
 ```
 
 <a className="button" target="\_blank" href={ require("/UserDefinedSPM.zip").default } download>ユーザー定義SPMプロジェクトをダウンロード</a>
+
+## v0.7.0: DXF参照形状
+
+SPMSMのUser Defined Slot-Magnetでも`Import DXF`を使用できます。DXFのPoint、Line、Arcなどを参照して
+Points／Connectionsを作成し、磁化方向と合わせて保存します。`Unit`を作図単位に合わせ、正式保存前に閉ループと
+磁石領域を確認してください。未完成の編集は`Save Draft`で保持できます。

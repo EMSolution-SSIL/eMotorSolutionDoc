@@ -65,3 +65,8 @@ print(hints)
 project.show()
 ```
 
+## DXF-assisted User Defined Hole
+
+The SynRM User Defined editor accepts DXF reference points and curves and maps them to the normalized
+`Points` and `Connections` model. Match `Unit` to the drawing units, validate the hole boundary, and use `Save Draft`
+when the editing state is not yet ready for formal validation.
