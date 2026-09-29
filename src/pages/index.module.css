@@ -32,12 +32,3 @@
   background-color: #51a4eb;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-.version_badge {
-  color: #fff;
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-left: -2.5rem;
-  vertical-align: top;
-  display: inline-block;
-}

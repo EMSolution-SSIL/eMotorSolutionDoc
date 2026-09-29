@@ -16,9 +16,6 @@ function HomepageHeader() {
       <div className="container">
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
-        <span className={styles.version_badge}>
-          v0.6.4
-        </span>
         </Heading>
         <p className="hero__subtitle">
           <Translate
