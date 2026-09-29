@@ -215,3 +215,8 @@ ems.update_parameters(
 
 <a className="button" target="\_blank" href={ require("/UserDefinedIPM.zip").default } download>ユーザー定義IPMプロジェクトをダウンロード</a>
 
+## v0.7.0: DXF参照形状
+
+Hole-Magnetの`Import DXF`では、DXFのLine／Arc／Pointを参照してPointsとConnectionsを作成できます。
+選択した2点からX軸との交点を作成する補助機能、Arc中心の再利用、`Save Draft`による未完成状態の保存に対応します。
+`Unit`はDXFの作図単位と一致させてください。

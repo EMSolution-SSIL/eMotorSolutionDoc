@@ -207,4 +207,12 @@ ems.update_parameters(
 
 <a className="button" target="\_blank" href={ require("/UserDefinedSlot.zip").default } download>ユーザー定義スロットプロジェクトをダウンロード</a>
 
+## v0.7.0: DXF参照形状
+
+`Import DXF`では、`POINT`、`LINE`、`ARC`、`CIRCLE`、`POLYLINE`、`INSERT`を参照形状として読み込めます。
+`Unit`をDXFの作図単位に合わせ、Line／Arcを選択してConnectionsへ取り込みます。既存Connectionから中点を
+作成でき、`Auto-fix tolerance [m]`で微小な座標誤差を補正できます。
+
+`Save Draft`は未完成の編集状態を保存し、正式な`Save`が成功するとドラフトを削除します。DXF内の参照曲線は
+形状境界そのものではないため、正式保存前にPointsとConnectionsを確認してください。
 

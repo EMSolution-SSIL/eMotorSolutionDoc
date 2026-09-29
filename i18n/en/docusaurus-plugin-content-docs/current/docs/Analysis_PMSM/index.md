@@ -2,7 +2,9 @@
 sidebar_position: 9
 title: "PMSM Analysis"
 ---
-埋込型永久磁石同期モータ(IPMSM)、表面型永久磁石磁石同期モータ(SPMSMs)は以下の解析が可能です:
+The following analyses are available for interior and surface permanent-magnet synchronous motors (IPMSM and SPMSM):
+
+See [Efficiency and Performance Map](./Efficiency_Map) for the Efficiency Map workflow.
 
 import DocCardList from '@theme/DocCardList';
 

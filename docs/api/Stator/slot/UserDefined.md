@@ -30,3 +30,10 @@ Please check the [Stator Slot User Defined](/docs/docs/Extras/user_defined_stato
 | wedge_area | `float` Returns the area of the wedge in `m^2`. :warning: *read-only* |
 | total_area | `float` Returns the total area of the slot in `m^2`. :warning: *read-only* |
 | hints | `dict[str, float]` Returns the hints for the slot in `m`. :warning: *read-only* |
+
+## DXF-assisted editing
+
+The GUI can import `POINT`, `LINE`, `ARC`, `CIRCLE`, `POLYLINE`, and `INSERT` entities as reference geometry.
+Selected DXF connections are remapped to the normalized User Defined Point IDs. Shared endpoints and arc centers are
+reused within the coordinate tolerance. The slot editor also provides midpoint creation and `Save Draft` for incomplete
+editing; a successful formal save removes the draft.

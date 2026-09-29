@@ -180,3 +180,9 @@ ems.update_parameters(
 ```
 
 <a className="button" target="\_blank" href={ require("/UserDefinedSynRM.zip").default } download>ユーザー定義 SynRM プロジェクトをダウンロード</a>
+
+## v0.7.0: DXF参照形状
+
+SynRMのUser Defined Holeでも`Import DXF`を使用できます。DXFのPoint、Line、Arcなどを参照して
+Points／Connectionsを作成し、孔形状を確認して保存します。`Unit`を作図単位に合わせ、未完成の編集は
+`Save Draft`で保持できます。

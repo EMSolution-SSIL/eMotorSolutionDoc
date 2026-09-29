@@ -8,6 +8,8 @@ The `materials` attribute of the [`Project`](/docs/api/Project/) class correspon
 
 It is an instance of the `MaterialsData` class, containing all materials in the `collection` attribute, which is a dictionary of [`Non_Magnet_Material`](/docs/api/Materials/Non_Magnet_Material) and [`Magnet_Material`](/docs/api/Materials/Magnet_Material) instances. 
 The `MaterialsData` class can be accessed through `eMotorSolution.CheckPoints.Materials.Materials`.
+
+See [EMS Material Manager](./Material-Manager) for the optional material exchange API.
 :::tip[Parameters]
 - **_collection**: `dict[str, Union[Non_Magnet_Material, Magnet_Material]]` - A dictionary containing the materials used in the machine. The keys are the material names, and the values are instances of [`Non_Magnet_Material`](/docs/api/Materials/Non_Magnet_Material) or [`Magnet_Material`](/docs/api/Materials/Magnet_Material).
 

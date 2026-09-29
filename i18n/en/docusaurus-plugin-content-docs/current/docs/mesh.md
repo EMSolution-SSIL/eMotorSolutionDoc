@@ -74,3 +74,18 @@ Similar to the stator region, that is defined as follows:
 
 ### Report Mesh Summary
 This button prints the mesh summary in the log panel. 
+
+## v0.7.0: GEO and external mesh sources
+
+The Mesh checkpoint can use the normal `Base` model, an EMSOptimizer-updated `Imported GEO`, or an external
+`Imported Mesh`.
+
+| Source Mode | Content | Mesh generation |
+| --- | --- | --- |
+| `Base` | Generate from the current eMotorSolution model | Allowed |
+| `Imported GEO` | Prefer the registered GEO and fall back to Base GEO for missing components | Allowed |
+| `Imported Mesh` | Use external stator and rotor meshes | Not allowed |
+
+Imported GEO and Imported Mesh are mutually exclusive. Verify that the profile is `ready` and that the GEO/Mesh Status
+and file names are valid. External meshes must use Gmsh 4.1 ASCII format with the required physical groups. Include
+`ImportedGeometry`/`ImportedMesh` copies when distributing a project.
