@@ -63,6 +63,9 @@ const config = {
           sidebarPath: './sidebars.js',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
+          versions: {
+            current: { label: 'Next', path: 'next', banner: 'unreleased' },
+          },
         },
         blog: {
           showReadingTime: true,
@@ -130,6 +133,10 @@ const config = {
           //   label: 'Showcases',
           // },
           // { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+          },
           {
             type: 'localeDropdown',
             position: 'right',
