@@ -27,16 +27,43 @@ Currently the only pre-requisite for using the eMotorSolution API is to have Pyt
 
 ## 3. Installing the eMotorSolution API
 
-`eMotorSolution` API comes with some dependencies that should be installed prior to installing the package. They are provided together as a zip file. Download the zip file provided by the eMotorSolution team and extract it to a folder on your local machine. Navigate to that folder in your terminal and run the following command:
+The eMotorSolution API is distributed as a zip file, `emotorsolution-<version>-API.zip`, provided by the eMotorSolution team. `<version>` is the release number, e.g. `0.7.1.0`. The zip file contains:
 
-```bash
-pip install -r requirements.txt
+```text
+emotorsolution-<version>-API.zip
+├── emotorsolution-<version>-py3-none-any.whl   # the eMotorSolution API package
+└── local_packages/                              # dependencies not available on PyPI
+    ├── pyemsol-....whl
+    ├── PythonCDT-....whl
+    └── ems_motor_nt-....whl
 ```
 
-It will automatically install all the required dependencies.
+1. Make sure the conda environment from step 2 is activated.
+    ```bash
+    conda activate emotorsolution
+    ```
+2. Extract the zip file to a folder on your local machine, then navigate to that folder in your terminal (the folder that contains the `.whl` file and the `local_packages` folder).
+    ```bash
+    cd path/to/emotorsolution-<version>-API
+    ```
+3. Install the package. Replace `<version>` with the version in your file name.
+    ```bash
+    pip install --find-links local_packages emotorsolution-<version>-py3-none-any.whl
+    ```
+    For example, for version `0.7.1.0`:
+    ```bash
+    pip install --find-links local_packages emotorsolution-0.7.1.0-py3-none-any.whl
+    ```
+    `--find-links local_packages` lets pip install the bundled dependencies from the `local_packages` folder. The remaining dependencies are downloaded from PyPI, so an internet connection is required.
 
-To verify that the installation was successful, you can run the following command:
+:::note
+The packages in `local_packages` are built for Python 3.11 on Windows (64-bit), so the environment must use Python 3.11. We recommend installing into a new environment. If an older `pyemsol` is already installed in the environment, add `--force-reinstall` to the command above.
+:::
+
+To verify that the installation was successful, run:
 
 ```bash
 python -c "import eMotorSolution; print(eMotorSolution.get_version())"
 ```
+
+It prints the installed version, e.g. `(0, 7, 1, 0)`.
