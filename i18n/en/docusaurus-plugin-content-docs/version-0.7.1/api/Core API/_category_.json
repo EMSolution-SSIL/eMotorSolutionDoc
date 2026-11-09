@@ -1,0 +1,8 @@
+{
+  "label": "Core API",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "This section provides an overview of the core API functionalities available in the eMotorSolution package."
+  }
+}
