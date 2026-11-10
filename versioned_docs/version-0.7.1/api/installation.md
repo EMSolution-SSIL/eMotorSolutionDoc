@@ -34,9 +34,9 @@ eMotorSolution APIは、eMotorSolutionチームから提供されるzipファイ
 emotorsolution-<version>-API.zip
 ├── emotorsolution-<version>-py3-none-any.whl   # eMotorSolution APIパッケージ本体
 └── local_packages/                              # PyPIで提供されていない依存パッケージ
-    ├── pyemsol-....whl
-    ├── PythonCDT-....whl
-    └── ems_motor_nt-....whl
+    ├── pyemsol-....whl          # Windows / Linux (Ubuntu, RHEL)
+    ├── PythonCDT-....whl        # Windows / Linux
+    └── ems_motor_nt-....whl     # Windows / Linux (Ubuntu, RHEL)
 ```
 
 1. ステップ2で作成したconda環境がアクティベートされていることを確認します。
@@ -58,8 +58,19 @@ emotorsolution-<version>-API.zip
     `--find-links local_packages` を指定すると、同梱の依存パッケージが `local_packages` フォルダからインストールされます。その他の依存パッケージはPyPIからダウンロードされるため、インターネット接続が必要です。
 
 :::note
-`local_packages` 内のパッケージはWindows（64ビット）のPython 3.11向けにビルドされているため、Python 3.11の環境を使用してください。新しい環境へのインストールを推奨します。環境に古い `pyemsol` がすでにインストールされている場合は、上記のコマンドに `--force-reinstall` を追加してください。
+`local_packages` 内のパッケージはPython 3.11（64ビット）向けにビルドされているため、Python 3.11の環境を使用してください。WindowsおよびLinux用のホイールが同梱されており、pipが環境に合ったものを自動的に選択します。新しい環境へのインストールを推奨します。環境に古い `pyemsol` がすでにインストールされている場合は、上記のコマンドに `--force-reinstall` を追加してください。
 :::
+
+### Linux（RHEL）の場合
+
+`pyemsol` と `ems_motor_nt` にはUbuntu用とRHEL用のホイールがあり、どちらも同じバージョン・同じプラットフォームタグのため、pipは常にUbuntu用を選択します。RHELでは、先にRHEL用のホイールを指定してインストールしてから、通常のコマンドを実行してください。
+
+```bash
+pip install local_packages/pyemsol-*rhel*.whl local_packages/ems_motor_nt-*rhel*.whl
+pip install --find-links local_packages emotorsolution-<version>-py3-none-any.whl
+```
+
+また、Linux用の `PythonCDT` は glibc 2.28 以降（manylinux_2_28）が必要です。
 
 インストールが正常に完了したことを確認するには、次のコマンドを実行します。
 

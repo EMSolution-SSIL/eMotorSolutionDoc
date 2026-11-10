@@ -33,9 +33,9 @@ The eMotorSolution API is distributed as a zip file, `emotorsolution-<version>-A
 emotorsolution-<version>-API.zip
 ├── emotorsolution-<version>-py3-none-any.whl   # the eMotorSolution API package
 └── local_packages/                              # dependencies not available on PyPI
-    ├── pyemsol-....whl
-    ├── PythonCDT-....whl
-    └── ems_motor_nt-....whl
+    ├── pyemsol-....whl          # Windows / Linux (Ubuntu, RHEL)
+    ├── PythonCDT-....whl        # Windows / Linux
+    └── ems_motor_nt-....whl     # Windows / Linux (Ubuntu, RHEL)
 ```
 
 1. Make sure the conda environment from step 2 is activated.
@@ -57,8 +57,19 @@ emotorsolution-<version>-API.zip
     `--find-links local_packages` lets pip install the bundled dependencies from the `local_packages` folder. The remaining dependencies are downloaded from PyPI, so an internet connection is required.
 
 :::note
-The packages in `local_packages` are built for Python 3.11 on Windows (64-bit), so the environment must use Python 3.11. We recommend installing into a new environment. If an older `pyemsol` is already installed in the environment, add `--force-reinstall` to the command above.
+The packages in `local_packages` are built for 64-bit Python 3.11, so the environment must use Python 3.11. Wheels for both Windows and Linux are bundled, and pip automatically selects the one that matches your environment. We recommend installing into a new environment. If an older `pyemsol` is already installed in the environment, add `--force-reinstall` to the command above.
 :::
+
+### Linux (RHEL)
+
+`pyemsol` and `ems_motor_nt` ship separate wheels for Ubuntu and RHEL. They have the same version and platform tag, so pip always picks the Ubuntu one. On RHEL, install the RHEL wheels first, then run the normal command:
+
+```bash
+pip install local_packages/pyemsol-*rhel*.whl local_packages/ems_motor_nt-*rhel*.whl
+pip install --find-links local_packages emotorsolution-<version>-py3-none-any.whl
+```
+
+The Linux `PythonCDT` wheel also requires glibc 2.28 or newer (manylinux_2_28).
 
 To verify that the installation was successful, run:
 
