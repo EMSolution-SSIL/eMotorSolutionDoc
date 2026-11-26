@@ -16,6 +16,8 @@ v0.7.0では、GUIから解析、性能計算、結果表示、Motor ROMの単�
 3. `Analysis > PMSM > Efficiency Map`を追加します。
 4. Motion、Calculation Steps、Current and Phaseを設定します。
 
+<p class="ems">![Efficiency Mapの解析設定](./img/efficiency_map_property1.png)</p>
+
 鉄損を評価する場合は、`Use full electrical cycle`を有効にしてください。
 
 ## 性能計算
@@ -34,6 +36,8 @@ v0.7.0では、GUIから解析、性能計算、結果表示、Motor ROMの単�
 
 APIによって生成される成果物が異なります。CSVがないAPIでも、結果JSONが生成されていれば正常です。
 
+<p class="ems">![Efficiency Mapの計算オプション](./img/efficiency_map_property2.png)</p>
+
 ## 結果とPerformance Map
 
 主な成果物は次のとおりです。
@@ -49,10 +53,14 @@ APIによって生成される成果物が異なります。CSVがないAPIで�
 `Plot efficiency map`ではQuantityを選択して性能マップを表示します。JSONの`schemaVersion`の
 メジャーバージョンが未対応の場合は読み込みを拒否します。
 
+<p class="ems">![Efficiency Mapの計算結果](./img/efficiency_map_plot.png)</p>
+
 ## Motor ROM単一運転点評価
 
 Speed、Torque、Control Strategy（`AUTO`、`MIN_CURRENT`、`MAX_EFFICIENCY`）を指定して、
 単一運転点を評価できます。運転点が制約外の場合は`INFEASIBLE`として結果を返し、実行エラーとは区別します。
+
+<p class="ems">![Motor ROM単一運転点評価](./img/efficiency_map_motor_rom.png)</p>
 
 ## 状態と注意事項
 
