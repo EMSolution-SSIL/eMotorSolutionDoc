@@ -7,6 +7,8 @@ title: Manufacturing BOM
 
 `Manufacturing > BOM`は、モータの主要材料について体積・質量を集計するManufacturing Bill of Materialsです。
 
+<p class="ems">![Manufacturing BOMの集計画面](./img/manufacturing_bom.png)</p>
+
 ## 使用方法
 
 1. `Materials`で材料のManufacturing情報と密度を設定します。

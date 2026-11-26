@@ -8,6 +8,8 @@ title: Winding Conductor
 `Winding Conductor` defines the conductor structure, insulation, packing, fill factor, and phase resistance in stator slots.
 The settings are shared by `Slot Packing` and the Manufacturing BOM.
 
+<p class="ems">![Winding Conductor settings](./img/winding_conductor_properties.png)</p>
+
 ## Basic workflow
 
 1. Open `Stator`.
@@ -30,6 +32,8 @@ The settings are shared by `Slot Packing` and the Manufacturing BOM.
 
 Slot Packing accounts for conductor geometry, insulation, slot liner, and conductor clearances. Results include fill factors,
 coil resistance, end-winding length, and diagnostics.
+
+<p class="ems">![Slot Packing result](./img/winding_conductor_slot_packing.png)</p>
 
 ## Material ownership
 

@@ -16,6 +16,8 @@ In v0.7.0, the GUI supports analysis, performance calculation, result plotting, 
 3. Add `Analysis > PMSM > Efficiency Map`.
 4. Configure Motion, Calculation Steps, and Current and Phase.
 
+<p class="ems">![Efficiency Map analysis settings](./img/efficiency_map_property1.png)</p>
+
 Enable `Use full electrical cycle` when iron loss is evaluated.
 
 ## Performance calculation
@@ -34,6 +36,8 @@ Enable `Use full electrical cycle` when iron loss is evaluated.
 
 Each API has its own required artifacts. A missing CSV is not an error when the selected API produces JSON results only.
 
+<p class="ems">![Efficiency Map calculation options](./img/efficiency_map_property2.png)</p>
+
 ## Results and Performance Map
 
 | File | Content |
@@ -46,10 +50,14 @@ Each API has its own required artifacts. A missing CSV is not an error when the 
 
 Use `Plot efficiency map` to select a Quantity and display the map. An unsupported major `schemaVersion` is rejected.
 
+<p class="ems">![Efficiency Map result](./img/efficiency_map_plot.png)</p>
+
 ## Single-point Motor ROM
 
 Specify Speed, Torque, and Control Strategy (`AUTO`, `MIN_CURRENT`, or `MAX_EFFICIENCY`) to evaluate one operating point.
 An operating point outside the constraints is returned as `INFEASIBLE` and is distinct from an execution error.
+
+<p class="ems">![Single-point Motor ROM evaluation](./img/efficiency_map_motor_rom.png)</p>
 
 ## Status and notes
 

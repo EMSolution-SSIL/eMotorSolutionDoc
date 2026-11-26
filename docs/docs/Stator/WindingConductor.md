@@ -8,6 +8,8 @@ title: Winding Conductor
 `Winding Conductor`は、スロットに入る導体の構成、絶縁、導体配置、占積率、相抵抗を定義します。
 設定内容は`Slot Packing`とManufacturing BOMで共通に使用されます。
 
+<p class="ems">![巻線導体の設定](./img/winding_conductor_properties.png)</p>
+
 ## 基本手順
 
 1. `Stator`を開きます。
@@ -30,6 +32,8 @@ title: Winding Conductor
 
 Slot Packingでは、導体断面、絶縁、スロットライナー、導体間クリアランスを考慮して占積率を計算します。
 結果にはコイル抵抗、エンド巻線長、診断メッセージが含まれます。
+
+<p class="ems">![Slot Packingの結果](./img/winding_conductor_slot_packing.png)</p>
 
 ## 材料の所有関係
 

@@ -7,6 +7,8 @@ title: Manufacturing BOM
 
 `Manufacturing > BOM` aggregates material volumes and masses for the main motor components.
 
+<p class="ems">![Manufacturing BOM summary](./img/manufacturing_bom.png)</p>
+
 ## Workflow
 
 1. Set manufacturing properties and densities for materials in `Materials`.
